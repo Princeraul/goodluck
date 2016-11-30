@@ -1,0 +1,20 @@
+@charset 'UTF-8';
+
+$md-color-txt: #777;
+
+$md-color-red: #c8241f;
+$md-color-wine: #ea3832;
+$md-color-yellow: #c88f2c;
+$md-color-base: $md-color-txt;
+
+.color-red {
+	color: $md-color-red;
+}
+
+.color-winered {
+	color: $md-color-wine;
+}
+
+.color-yellow {
+	color: $md-color-yellow;
+}

@@ -1,0 +1,95 @@
+
+html {
+	min-height: 100%;
+	background-image: radial-gradient(#fde900 0%, #ee9b11 100%);
+	color: #555;
+}
+
+.webview {
+	// padding-bottom: 70px;
+}
+
+.inp-telphone {
+	@extend %inp-default;
+
+	margin: 0 auto;
+	color: $inp-draw-base-color;
+	border: 1px solid $inp-draw-base-color;
+
+	&::-webkit-input-placeholder {
+		color: $inp-draw-base-color;
+		line-height: 40px;
+	}
+}
+
+// 抽奖按钮
+.btn-draw {
+	// @extend %btn;
+	position: absolute;
+	top: 0;
+	left: 0;
+	display: block;
+	width: 105px;
+	height: 105px;
+	text-indent: -999em;
+}
+
+.game-info {
+	position: absolute;
+	right: 60px;
+	bottom: 20px;
+	width: 45px;
+	height: 45px;
+	text-indent: -999em;
+}
+
+// 领奖按钮
+.btn-prize {
+	@extend %btn;
+	//
+	// background-color: $btn-prize-bg-color;
+	// color: $btn-prize-text-color;
+	//
+	// &:active {
+	// 	background-color: lighten($btn-prize-bg-color, 5%);
+	// }
+
+	@include box-background-size(391px, 99px, url(../images/btn-prize.png) no-repeat);
+	color: $white;
+
+}
+
+// dialog 弹窗按钮
+.btn-prompt {
+	@extend %btn;
+
+	width: 92%;
+	background-color: $btn-prompt-bg-color;
+	color: $btn-prompt-text-color;
+
+	&:active {
+		background-color: lighten($btn-prompt-bg-color, 5%);
+	}
+}
+
+// address 确认按钮
+.btn-affirm {
+	@extend %btn;
+
+	width: 94%;
+	background-color: $btn-affirm-bg-color;
+	color: $btn-affirm-text-color;
+
+	&:active {
+		background-color: lighten($btn-affirm-bg-color, 5%);
+	}
+}
+
+// points gray btn
+.btn-gray {
+	@extend %btn;
+
+	width: 92%;
+	background-color: $btn-gray-bg-color;
+	color: $btn-gray-text-color;
+}

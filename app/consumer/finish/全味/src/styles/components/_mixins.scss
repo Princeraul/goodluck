@@ -1,0 +1,69 @@
+@charset 'utf-8';
+
+@mixin box-background-size($width, $height, $url) {
+	width: $width / 2;
+	height: $height / 2;
+	background: $url;
+	background-size: $width / 2 $height / 2;
+}
+
+// font 字体引用
+@mixin font-face {
+	 @font-face{
+		font-family: 'iconfont';
+		src: url('../fonts/iconfont.eot?t=1471600183');
+		src: url('../fonts/iconfont.eot?t=1471600183#iefix') format('embedded-opentype')
+		, url('../fonts/iconfont.woff?t=1471600183') format('woff')
+		, url('../fonts/iconfont.ttf?t=1471600183') format('truetype')
+		, url('../fonts/iconfont.svg?t=1471600183#iconfont') format('svg');
+	}
+}
+
+//  红包模块
+@mixin gift-packet {
+	.gift-packet {
+		@include box-background-size(125px, 117px, url('../images/red-packet.png') no-repeat);
+
+		position: relative;
+		margin: 20px auto 15px;
+		color: $gift-packet-color;
+
+		.gift-packet-number {
+			position: absolute;
+			top: 30px;
+			left: 50%;
+			width: 80%;
+			font-size: 20px;
+			font-weight: bold;
+			text-align: center;
+			transform: translate(-50%, 0);
+		}
+
+		small {
+			font-size: 16px;
+		}
+	}
+}
+
+// 积分模块
+@mixin gift-integral {
+	.gift-integral {
+		@include box-background-size(291px, 151px, url('../images/inter.png') no-repeat);
+		position: relative;
+		box-sizing: border-box;
+		padding-top: 10px;
+		margin: 15px auto 10px;
+		color: $gift-integral-color;
+		text-align: center;
+
+		.gift-integral-number {
+			margin-right: 5px;
+			font-size: 50px;
+		}
+
+		small {
+			font-size: 18px;
+			vertical-align: 5px;
+		}
+	}
+}

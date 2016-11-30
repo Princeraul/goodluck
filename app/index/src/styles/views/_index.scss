@@ -1,0 +1,250 @@
+.nabao-scroll {
+	overflow: hidden;
+	width: 100%;
+
+	img {
+		display: block;
+	}
+}
+
+.nabao-screen-one {
+	padding: 63px 0 30px;
+}
+
+.screen-big {
+	margin: 0;
+	color: $base-text-color;
+	font-size: 36px;
+	font-weight: 500;
+	text-align: center;
+}
+
+.screen-small {
+	margin: 0;
+	color: $base-text-color;
+	font-size: 26px;
+	font-weight: lighter;
+	text-align: center;
+}
+
+.screen-one-item {
+	@extend %clearfix;
+
+	padding: 0;
+	margin: 40px 0 0;
+	color: $base-text-color;
+	font-size: 16px;
+
+	li {
+		float: left;
+		overflow: hidden;
+		width: 190px;
+		margin: 0 31px;
+		list-style: none;
+		text-align: justify;
+		word-wrap: break-word;
+	}
+
+	.first {
+		margin-left: 0;
+	}
+
+	.last {
+		margin-right: 0;
+	}
+
+	a {
+		color: $base-text-color;
+		text-decoration: none;
+	}
+
+	h3 {
+		margin-bottom: 5px;
+		color: #58caff;
+		font-size: 20px;
+		font-weight: 500;
+		text-align: center;
+	}
+
+	.pic {
+		display: block;
+	}
+}
+
+.nabao-screen-two {
+	overflow: hidden;
+	height: 550px;
+	padding-top: 65px;
+	background-color: #bce7fa;
+}
+
+.nabao-screen-two h3,
+.nabao-screen-two h4 {
+	color: #4290b3;
+}
+
+.screen-two-scroll {
+	@extend %clearfix;
+
+	padding-bottom: 30px;
+	padding-left: 150px;
+	margin-top: 40px;
+
+	.scroll-text {
+		float: left;
+		width: 260px;
+		color: #777;
+		font-size: 20px;
+	}
+
+	.title {
+		margin: 0;
+		color: #319ccb;
+		font-size: 36px;
+		font-weight: 700;
+	}
+
+	.scroll-img {
+		float: left;
+		margin-left: 20px;
+	}
+}
+
+.nabao-screen-three {
+	padding-top: 50px;
+	padding-bottom: 30px;
+}
+
+
+.screen-three-item {
+	@extend %clearfix;
+
+	margin-top: 50px;
+	margin-bottom: 30px;
+
+	a {
+		position: relative;
+		float: left;
+		width: 222px;
+		height: 279px;
+		margin-right: 20px;
+		text-decoration: none;
+	}
+
+	span {
+		@include backgroundtransparent(#fff, 0.8);
+
+		position: absolute;
+		bottom: 0;
+		display: inline-block;
+		width: 100%;
+		height: 55px;
+		color: $base-text-color;
+		font-size: 20px;
+		font-style: normal;
+		line-height: 55px;
+		text-align: center;
+	}
+
+	i {
+		display: inline-block;
+		vertical-align: -6px;
+	}
+
+	.last {
+		margin-right: 0;
+	}
+}
+
+.nabao-screen-four {
+	padding-top: 60px;
+	background-color: #bce7fa;
+	background-attachment: fixed;
+
+	.base-box {
+		height: 486px;
+		background: url('../images/2.jpg') center top no-repeat;
+	}
+
+	h3,
+	h4 {
+		color: #4290b3;
+	}
+}
+
+.nabao-screen-five {
+	padding-top: 70px;
+}
+
+.item-clo-3 {
+	@extend %clearfix;
+
+	padding: 0;
+	margin-top: 45px;
+
+	li {
+		float: left;
+		overflow: hidden;
+		box-sizing: border-box;
+		width: 330px;
+		*width: 270px;
+		height: 485px;
+		padding: 10px;
+		margin-right: 105px;
+		box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
+		list-style: none;
+
+		img {
+			width: 100%;
+			height: 190px;
+		}
+	}
+
+	h3 {
+		margin: 0 0 10px;
+		color: #58caff;
+	}
+
+	h4 {
+		margin: 10px 0 5px;
+		font-size: 18px;
+		font-weight: normal;
+	}
+
+	.last {
+		margin-right: 0;
+	}
+
+	.oc {
+		display: block;
+		margin-bottom: 10px;
+		color: #8c847e;
+		font-size: 12px;
+	}
+
+	.cot {
+		overflow: hidden;
+		height: 60px;
+		font-size: 14px;
+		word-wrap: break-word;
+
+		font {
+			color: #ff8e00;
+		}
+	}
+
+	.five-info {
+		margin-top: 15px;
+		border-top: 1px solid #ececec;
+	}
+
+	p {
+		padding-left: 5px;
+		font-size: 12px;
+	}
+
+	a {
+		color: $base-text-color;
+		text-decoration: none;
+	}
+}

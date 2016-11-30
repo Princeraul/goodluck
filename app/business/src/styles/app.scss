@@ -1,0 +1,73 @@
+@charset 'utf-8';
+@import './abstracts/variables';
+
+$theme-background-color: hsl(0, 0%, 100%);
+$theme-color: $color;
+$theme-box-shadow: hsla(0, 0%, 0%, 0.2);
+$theme-color-hls: hsla(0, 0%, 0%, 0.6);
+
+
+body {
+	margin: 0;
+	padding: 0;
+
+	font-family: 'Microsoft yahei';
+}
+
+header {
+	position: fixed;
+	top: 0;
+	right: 0;
+
+	width: 100%;
+	height: 60px;
+
+	background-color: $theme-background-color;
+	color: $theme-box-shadow;
+	box-shadow: 1px 1px 5px $theme-box-shadow;
+
+	font-weight: 500;
+	font-size: 24px;
+	line-height: 60px;
+	text-align: center;
+}
+
+main {
+	overflow: hidden;
+
+	padding: 80px 15px 0;
+
+	color: mix($theme-color-hls, 10%);
+
+	font-size: 14px;
+}
+
+.banner {
+	width: 130px;
+	height: 53px;
+	margin: 0 auto;
+
+	background: url('../images/vcode.jpg') no-repeat;
+	color: $theme-color;
+
+	cursor: pointer;
+}
+
+h2 {
+	text-align: center;
+}
+
+.content {
+	margin-top: 25px;
+	margin-bottom: 15px;
+	text-align: center;
+	color: $theme-color;
+	font-weight: 700;
+	font-size: 60px;
+}
+
+.livereload {
+	text-align: center;
+	font-size: 30px;
+	color: $theme-color;
+}

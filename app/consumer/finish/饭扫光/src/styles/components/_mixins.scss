@@ -1,0 +1,467 @@
+@charset 'utf-8';
+@import 'function';
+
+@mixin box-background-size($width, $height, $url) {
+	width: $width / 2;
+	height: $height / 2;
+	background: $url;
+	background-size: $width / 2 $height / 2;
+}
+
+// loading 圆心旋转
+@mixin loading-circle($conf: ()) {
+	$conf: extend((
+		size: 14px,
+		speed: 2s,
+		model: 100px,
+	), $conf);
+
+	.circle {
+		width: map-get($conf, model);
+		height: map-get($conf, model);
+		border: solid 8px;
+		border-color: $loading-circle-border-color;
+		border-radius: 100%;
+		color: $white;
+		animation: rotate map-get($conf, speed) infinite;
+	}
+
+	.circleLoading {
+		position: absolute;
+		top: 43%;
+		right: 0;
+		left: 50%;
+		width: 100%;
+		color: $loading-circle-text-color;
+		font-size: map-get($conf, size);
+		text-align: center;
+		transform: translate(-50%, -50%);
+		animation: blink map-get($conf, speed) infinite;
+	}
+
+	@keyframes rotate {
+		0% {
+			transform: rotateZ(0deg);
+		}
+
+		100% {
+			transform: rotateZ(360deg);
+		}
+	}
+
+	@keyframes blink {
+		0% {
+			opacity: 0.4;
+		}
+
+		100% {
+			opacity: 1;
+		}
+	}
+}
+
+// dialog弹窗浮层content
+@mixin dialog-content {
+	.dialog-content {
+		@extend %translate-absolute-center;
+		opacity: 0;
+		visibility: hidden;
+		width: 80%;
+		padding-top: 15px;
+		background-color: $white;
+		border-radius: 5px;
+		box-shadow: 1px 1px 6px	rgba(0, 0, 0, 0.3);
+		text-align: center;
+		transform: translate(-50%, -50%) scale(0);
+		transition: all 0.2s;
+	}
+
+	.dialog-confirm {
+		box-sizing: border-box;
+		display: block;
+		overflow: hidden;
+		padding: 12px 0;
+		margin-top: 15px;
+		border-top: 1px solid $border-color;
+		text-decoration: none;
+		color: $dialog-color;
+
+		&:active {
+			background-color: $dialog-confirm-bgcolor;
+		}
+	}
+
+	.dialog-content.element-active {
+		@extend %scaleactive;
+		z-index: z('shoryuken');
+	}
+}
+
+// 领取成功module
+@mixin prompt-box {
+	.prompt-box {
+		@extend %translate-absolute-center;
+		opacity: 0;
+		visibility: hidden;
+		width: 70%;
+		padding-bottom: 5px;
+		background-color: $white;
+		border-radius: 8px;
+		box-shadow: 0 1px 6px rgba(0, 0, 0, 0.1);
+		color: #333;
+		text-align: center;
+		transform: translate(-50%, -50%) scale(0);
+		transition: all 0.2s;
+
+		h3 {
+			position: relative;
+			height: 45px;
+			margin: 0;
+			border-radius: 8px 8px 0 0;
+			background-color: $dialog-title-bg-color;
+			color: #fff;
+			font-size: 16px;
+			line-height: 45px;
+			text-align: center;
+		}
+	}
+
+	.prompt-box-cot {
+		padding: 20px 10px 5px;
+		text-align: center;
+
+		p {
+			margin: 10px 0 0;
+			padding: 0;
+		}
+	}
+
+	.prompt-box.element-active {
+		@extend %scaleactive;
+		z-index: z('shoryuken');
+	}
+}
+
+
+@mixin points-main {
+	.points-header {
+		position: fixed;
+		z-index: 11;
+		top: 0;
+		left: 0;
+
+		display: none;
+		width: 100%;
+		height: 45px;
+		background-color: rgba(102, 0, 0, 0.8);
+		color: #fff;
+		font-size: 14px;
+		line-height: 45px;
+		text-align: center;
+
+		a {
+			color: $white;
+			font-weight: 700;
+			text-decoration: none;
+		}
+
+		span {
+			float: right;
+			margin-right: 3%;
+			color: #fff;
+			font-size: 16px;
+			font-weight: bold;
+			cursor: pointer;
+		}
+	}
+
+	.intergral-points {
+		position: fixed;
+		z-index: 9;
+		top: 0;
+		right: 0;
+		left: 0;
+		box-sizing: border-box;
+		width: 100%;
+		padding: 15px;
+		background-color: #fff;
+		color: #f32525;
+		text-align: center;
+	}
+
+	.intergral {
+		margin-top: 70px;
+	}
+
+	.intergral-item {
+		padding: 0 4%;
+		margin: 0;
+
+		li {
+			list-style: none;
+			position: relative;
+			box-sizing: border-box;
+			margin-bottom: 15px;
+			background-color: #fff;
+		}
+
+		img {
+			width: 205px;
+			height: 120px;
+		}
+
+		i {
+			@include sprite($icon1);
+
+			position: absolute;
+			top: 0;
+			right: 0;
+			transform: scale(0.5);
+		}
+
+		li.active i {
+			@include sprite($icon);
+		}
+	}
+
+	.intergral-item-cot {
+		position: absolute;
+		right: 15px;
+		bottom: 10px;
+		font-size: 11px;
+		text-align: right;
+
+		span {
+			display: block;
+			line-height: 1.3;
+
+			&:nth-of-type(1) {
+				color: #f32525;
+			}
+
+			&:nth-of-type(2) {
+				color: #555;
+			}
+		}
+	}
+
+	.intergral-btn {
+		margin-top: 40px;
+		text-align: center;
+	}
+}
+
+@mixin qrcodeanimation($conf: ()) {
+	$conf: extend((
+		ele: qrcodeanimation,
+		width: 300px,
+		height: 407px,
+		right: 50px,
+		linewidth: 68px,
+		startop: 148px,
+		stoptop: 215px,
+		flag: true,
+	), $conf);
+
+	.#{map-get($conf, ele)} {
+		@extend %translate-absolute-center;
+
+		@if map-get($conf, flag) {
+			display: none;
+		}
+
+		width: map-get($conf, width);
+		height: map-get($conf, height);
+		text-align: center;
+
+		img {
+			width: 100%;
+			height: 100%;
+		}
+	}
+
+	.#{map-get($conf, ele)}-line {
+		position: absolute;
+		z-index: z('shoryuken');
+		right: map-get($conf, right);
+		width: map-get($conf, linewidth);
+		height: 2px;
+		background: url('../images/line.png') no-repeat;
+		background-size: map-get($conf, linewidth) 2px;
+		animation: #{map-get($conf, ele)}Start 2s infinite ease;
+	}
+
+	@keyframes #{map-get($conf, ele)}Start{
+		0%{
+			top: map-get($conf, startop);
+			opacity: 0;
+		}
+
+		50%{
+			opacity: 1;
+		}
+
+		100%{
+			top: map-get($conf, stoptop);
+			opacity: 0;
+		}
+	}
+
+	@if map-get($conf, flag) {
+		.#{map-get($conf, ele)}.qrcode-active {
+			display: block;
+			z-index: z('shoryuken');
+		}
+	}
+}
+
+@mixin entityadress() {
+	.md-address {
+		position: fixed;
+		z-index: 90;
+		top: 0;
+		left: 0;
+		overflow-y: scroll;
+		overflow-x: hidden;
+		-webkit-overflow-scrolling: touch;
+		width: 100%;
+		height: 100%;
+		background-color: #f0efed;
+		color: #6d6d6d;
+
+		transform: translate3d(100%, 0, 0);
+		will-change: transform;
+
+		h3 {
+			position: relative;
+			padding: 0;
+			margin: 0;
+			width: 100%;
+			height: 50px;
+			background-color: #fafafa;
+			color: #404040;
+			font-size: 18px;
+			font-weight: normal;
+			text-align: center;
+			line-height: 50px;
+
+			&::before {
+				@extend %retinaborder;
+			}
+		}
+
+		.btn-back {
+			position: absolute;
+			top: 50%;
+			left: 20px;
+			width: 12px;
+			height: 12px;
+			margin-top: -5px;
+			border-width: 2px 2px 0 0;
+			border-style: solid;
+			border-color: #1bc6b5;
+			transform: rotate(-135deg);
+		}
+
+		.btn {
+			width: 94%;
+		}
+	}
+
+	.md-address.md-address-visible {
+		transform: none;
+	}
+
+	.md-address-animatable.md-address {
+		transition: all 130ms ease-in;
+	}
+
+	.md-address-visible.md-address-animatable.md-address {
+		transition: all 330ms ease-out;
+	}
+
+	.list-from {
+		overflow: hidden;
+		margin: 0;
+		padding: 0;
+		background-color: #fff;
+		text-align: left;
+
+		li {
+			position: relative;
+			overflow: hidden;
+			width: 100%;
+			height: 45px;
+			font-size: 14px;
+			line-height: 45px;
+			padding: 0 15px;
+			list-style: none;
+
+			&::before {
+				@extend %retinaborder;
+			}
+
+			input {
+				position: absolute;
+				left: 0;
+				box-sizing: border-box;
+				width: 100%;
+				height: 100%;
+				padding-left: 55px;
+				background-color: transparent;
+				border: 0;
+				font-size: 14px;
+			}
+		}
+	}
+
+	.select-default {
+		-webkit-appearance: none;
+		position: absolute;
+		left: 60px;
+		width: 100%;
+		height: 45px;
+		background-color: transparent;
+		border: 0;
+	}
+
+	.entity-error,
+	.copyright-info {
+		padding: 0 3%;
+		text-align: left;
+	}
+}
+
+// footer
+@mixin footer() {
+	.footer {
+		position: fixed;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		display: block;
+		overflow: hidden;
+		height: 50px;
+		background-color: $white;
+		line-height: 50px;
+		text-align: center;
+
+		a {
+			display: block;
+			box-sizing: border-box;
+			height: inherit;
+			border-right: 1px solid $hightgray;
+			color: $base-text;
+			text-decoration: none;
+
+			&:last-of-type {
+				border-right: 0;
+			}
+		}
+
+		.iconfont {
+			margin-right: 5px;
+			font-size: 18px;
+		}
+	}
+}

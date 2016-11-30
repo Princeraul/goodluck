@@ -1,0 +1,103 @@
+// author: Princeraul
+// email: suliangprinceraul@gmail.com
+// time: 2016-09-14
+// 命名前缀规则：中奖礼品：gift积分：intergral
+
+@charset 'UTF-8';
+
+// telphone 弹窗
+@include dialog-content();
+// prompt 弹窗
+@include prompt-box();
+
+// 抽奖loading 浮层背景
+.loading {
+	@extend %bottom-view;
+	z-index: z('goku');
+}
+
+.loading_box {
+	@extend %translate-absolute-center;
+	@include loading-circle();
+}
+
+// dialog 弹窗
+.dialog {
+	@extend %bottom-view;
+
+	z-index: z('below');
+	opacity: 0;
+	transition: all 0.2s;
+}
+
+.dialog.dialog-active {
+	z-index: z('default');
+	opacity: 1;
+}
+
+// prize 未中奖提示语
+.nowin-prompt {
+	margin-top: 20px;
+	text-align: center;
+}
+
+// prize 红包module
+.gift-packet {
+	@include box-background-size(250px, 234px, url('../images/red-packet.png') no-repeat);
+
+	position: relative;
+	margin: 20px auto 15px;
+	color: $gift-packet-color;
+
+	.gift-packet-number {
+		position: absolute;
+		top: 30px;
+		left: 50%;
+		width: 80%;
+		font-size: 20px;
+		font-weight: bold;
+		text-align: center;
+		transform: translate(-50%, 0);
+	}
+
+	small {
+		font-size: 16px;
+	}
+}
+
+// peize 积分module
+.gift-integral {
+	@include box-background-size(291px, 151px, url('../images/inter.png') no-repeat);
+	position: relative;
+	box-sizing: border-box;
+	padding-top: 10px;
+	margin: 15px auto 10px;
+	color: $white;
+	text-align: center;
+
+	.gift-integral-number {
+		margin-right: 5px;
+		font-size: 45px;
+	}
+
+	small {
+		font-size: 18px;
+		vertical-align: 5px;
+	}
+}
+
+//中奖提示信息
+.gift-prompt {
+	text-align: center;
+}
+
+// points 积分 module
+@include points-main();
+
+// entityAdress
+@include entityadress();
+
+// foucus 二维码
+@include qrcodeanimation();
+// prize 为关注二维码
+@include qrcodeanimation($confsmall);

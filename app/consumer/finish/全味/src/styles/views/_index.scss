@@ -1,0 +1,159 @@
+@charset 'utf-8';
+
+@import 'base/normalize';
+@import 'components/font';
+@import 'components/color';
+@import 'components/dialog';
+@import 'components/loading';
+@import 'components/button';
+@import 'components/twocode';
+@import 'components/mixins';
+@import 'components/intergral';
+@import 'components/rotate';
+
+@import 'layout/weblayout';
+@import 'layout/grid';
+
+// 初始化dialog
+@include dialog;
+
+.quanwei {
+	height: inherit;
+	padding-bottom: 60px;
+}
+
+.quanwei-code {
+	@include box-background-size(600px, 910px, url('../images/1.png') no-repeat);
+
+	position: relative;
+	margin: 20px auto 0;
+}
+
+.quanwei-cot {
+	overflow: hidden;
+	padding: 0 10px 20px;
+	margin: 0 10px;
+	background-color: #fff;
+	color: #333;
+
+	h3,
+	span {
+		display: block;
+		color: #306dc8;
+		font-size: 18px;
+		font-weight: normal;
+	}
+
+	p {
+		padding-top: 10px;
+		margin: 0;
+		text-indent: 2em;
+	}
+
+	.fw {
+		padding: 15px 20px;
+	}
+}
+
+// 中奖实物 积分 红包 start
+.nowin-img {
+	width: 100px;
+	height: 225px;
+	margin: -20px auto 10px;
+	background: url('../images/nowin.png') no-repeat;
+	background-size: 100px 225px;
+}
+
+.nowin {
+	color: #fff;
+	text-align: center;
+
+	b {
+		color: #ffe139;
+		font-size: 18px;
+	}
+}
+
+.win-integral {
+	@include box-background-size(291px, 151px, url('../images/inter.png') no-repeat);
+	position: relative;
+	padding-top: 10px;
+	box-sizing: border-box;
+	margin: 15px auto 10px;
+	color: #fff;
+	text-align: center;
+
+	b {
+		margin-right: 5px;
+		font-size: 50px;
+	}
+
+	small {
+		font-size: 18px;
+		vertical-align: 5px;
+	}
+	p {
+		text-align: cecenter;
+	}
+}
+
+.win-img {
+	@include box-background-size(204px, 74px, url('../images/winner.png') no-repeat);
+	margin: 20px auto 10px;
+}
+
+.logo {
+	@include box-background-size(107px, 140px, url('../images/logo.png') no-repeat);
+	margin: 15px 0 0 25px;
+}
+
+.win-goods {
+	@include box-background-size(237px, 195px, url('../images/3.png') no-repeat);
+	margin: 15px auto 10px;
+}
+
+// end
+
+
+$color-array: #ffa15b  #2760d6;
+
+// footer
+.quanwei-footer-navbar {
+	position: fixed;
+	z-index: 99;
+	bottom: 0;
+	left: 0;
+	overflow: hidden;
+	width: 100%;
+	height: 50px;
+	padding: 0;
+	margin: 0;
+	background-color: #fff;
+	text-align: center;
+
+	.iconfont {
+		display: block;
+		font-size: 18px;
+	}
+
+	a {
+		box-sizing: border-box;
+        height: inherit;
+		padding: 3px 0 0;
+		border-right: 1px solid #ccc;
+		color: #555;
+		font-size: 14px;
+		text-decoration: none;
+
+		&:last-of-type {
+			border: 0;
+		}
+
+		@each $i  in $color-array {
+			$key: index($color-array, $i);
+			&:nth-of-type(#{$key}) .iconfont{
+				color: $i;
+			}
+		}
+	}
+}

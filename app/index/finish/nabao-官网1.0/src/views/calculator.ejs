@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="format-detection" content="telephone=no">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/app.min.css">
+</head>
+<body>
+    <% include compontens/header.ejs %>
+    <div class="calculator">
+        <div class="calculator-layout">
+            <div class="calculator-norm">
+                <h3>实时指标 <font>更新时间：2016-01-14  16:58:21</font></h3>
+            </div>
+            <ul class="calculator-block">
+                <li class="calculator-block-1">
+                    扫码率<br><font id="SweepRate">61.62</font>%
+                    <p>购买商品并扫码的消费者比例</p>
+                </li>
+                <li class="calculator-block-2">
+                    中奖率<br><font id="winRate">75</font>%
+                    <p>实时扫码中奖消费者比例</p>
+                </li>
+                <li class="calculator-block-3">
+                    中奖复购率<br><font id="buyingRate">62.5</font>%
+                    <p>中奖消费者重复购买比例</p>
+                </li>
+                <li class="calculator-block-4">
+                    未中奖复购率<br><font id="NotbuyingRate">45.6</font>%
+                    <p>未中奖消费者重复购买比例</p>
+                </li>
+            </ul>
+            <div class="sm-title">(以上数据均源于合作企业综合数据统计结果)</div>
+            <div class="chart-unit" md="main" md-index="0" style="height: 250px"></div>
+            <div class="calculator-num">
+                <div class="calculator-left">
+                    <h3>销量提升计算器</h3>
+                    <div class="calculator-write"><em>*</em>附码商品数量 <input type="text" id="quantity" class="input-blue">个 <small>(10万起)</small></div>
+                    <div class="calculator-write"><em>*</em>单个商品利润 <input type="text" id="profit" class="input-blue"><small>元</small></div>
+                    <div class="calculator-write"><em>*</em>平均奖品费用</div>
+                    <ul id="winColumnMain"> 
+                        <li><label>一等奖价格：</label><input type="text" class="input-yellow">元 数量：<input type="text" data-num="calculator-num" class="input-yellow">个</li>
+                        <li><label>二等奖价格：</label><input type="text" class="input-yellow">元 数量：<input type="text" data-num="calculator-num" class="input-yellow">个</li>
+                        <li><label>三等奖价格：</label><input type="text" class="input-yellow">元 数量：<input type="text" data-num="calculator-num" class="input-yellow">个</li>
+                    </ul>
+                    <div class="calculator-add">
+                        <span class="addbtn" onClick="calculatorMain.addWinColumn()">添加</span>
+                    </div>
+                    <div class="calculator-reset">
+                        <div class="error"></div>
+                        <span class="graybtn">重置</span>
+                        <span class="graybtn blueBtn" onClick="calculatorMain.init()">计算</span>
+                    </div>
+                </div>
+                <div class="calculator-right">
+                    <div class="calculator-rlt">
+                        <h4>计算结果： </h4>
+                        <div class="adducc"><i class="iconfont">&#xe60b;</i>中奖率 <span id="winerRate">0</span>%</div>
+                        <div class="addsell"><i class="iconfont">&#xe609;</i>预估增加销售额 <span id="sell">0</span>元</div>
+                        <div class="adduser"><i class="iconfont">&#xe60a;</i>预估掌握精准用户信息 <span id="userInfo">0</span>人</div>
+                    </div>
+                    <div class="rlt-userinfo">
+                        <h4><font>想了解销量快速提升的秘密？</font><br>
+留下您的信息，纳宝科技为您提供专属解决方案</h4>
+                        <ul>
+                            <li>电话 <input type="text"></li>
+                        </ul>
+                        <a href="" class="rlt-affirm">确认提交</a>
+                    </div>
+                </div>
+                <div style="clear:both"></div>
+            </div>
+        </div>
+    </div>
+    <!-- footer -->
+    <% include compontens/footer.ejs %>
+    <script src="js/libs/echarts.min.js"></script> 
+    <script src="js/echartdata.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,103 @@
+/*.pathway { position:absolute; left:50%; z-index:0;}*/
+$borderColor: #82D1F5;
+.pathway{
+  width: 1260px;
+  margin: 0 auto;
+  top: 250px;
+  /*height: 600px;*/
+	position: relative;
+}
+/* CSS Document */
+$baseSize: 1000px;
+.pathway > .content-pathway > div { 
+  position: absolute; 
+  top: 50%;
+  left: 50%; 
+  margin-left: -500px;
+  margin-top: -460px;
+  width: $baseSize;
+  height: $baseSize;
+  border-radius: 50%; 
+  border: 2px solid #70C5EE;/*椭圆轨道*/
+  transform-style: preserve-3d; 
+  transform: rotateX(68deg) rotateY(0deg);  
+  z-index:0;
+}
+/*滑动的白色亮点*/
+.pathway > .content-pathway > div:first-of-type > div {
+  width: $baseSize;
+  height: $baseSize;
+  position: absolute;
+  transform-style: preserve-3d;
+  animation: trail_ 7s infinite linear; 
+}
+
+.pathway > .content-pathway > div:first-of-type > div:after {
+  content: ""; 
+  position: absolute; 
+  top: -5px; 
+  left: 50%; 
+  margin-left: -5px; 
+  width: 20px; 
+  height: 20px; 
+  border-radius: 100%;
+  background: #BEF0FF;
+  box-shadow: 1px 1px 10px 10px rgba(29,165,242,.35);
+  transform: rotateX(90deg) rotateY(-360deg); 
+  animation: particle_ 10s infinite linear;
+}
+
+.pathway > .content-pathway > div:nth-of-type(2) {
+  -webkit-transform: rotateX(66deg) rotateY(0deg);
+  transform: rotateX(64deg) rotateY(0deg);
+  height: 1260px;
+  width: 1260px;
+  left: 50%;
+  border-color: #427EA3;
+  /*top:50%;*/
+  margin-top: -560px;
+  margin-left: -630px; 
+  z-index:0; 
+}
+
+/*.pathway > .content-pathway > div:nth-of-type(3) {
+  -webkit-transform: rotateX(70deg) rotateY(0deg);
+  transform: rotateX(70deg) rotateY(0deg);
+  height: 900px;
+  width: 600px;
+  left: 50%;
+  top: 0;
+  margin-top: -470px;
+  margin-left: -300px; z-index:0; border:3px solid #2e7fba;  
+}
+*/
+
+.pathway > .content-pathway > div:nth-of-type(2) > div,
+.pathway > .content-pathway > div:nth-of-type(2) > div:after {
+  -webkit-animation-delay: -.5s;
+  animation-delay: -.5s;
+}
+
+.pathway > .content-pathway > div:nth-of-type(3)  > div,
+.pathway > .content-pathway > div:nth-of-type(3)  > div:after {
+  -webkit-animation-delay: -1s;
+  animation-delay: -1s;
+}
+
+@keyframes trail_ { 
+    from {
+        transform: rotateZ(0deg);
+    } to {
+        transform: rotateZ(-360deg);
+    }
+}
+
+@keyframes particle_ { 
+    from {
+        transform: rotateX(90deg) rotateY(0deg); 
+    } to { 
+        transform: rotateX(90deg) rotateY(-360deg); 
+    } 
+}
+
+

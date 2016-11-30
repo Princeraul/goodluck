@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		body {
+			background-color: #002b36
+		}
+
+		.su-slider {
+			position: fixed;
+			top: 0px;
+			right: 0px;
+			margin: 150px  0 0;
+			padding: 15px;
+			background-color: #003f50;
+			border: solid #001a20;
+			border-width: 1px 0 1px 1px;
+			border-radius: 5px 0 5px 5px;
+			-webkit-border-radius: 5px 0 0 5px;
+		}
+
+		.su-slider a {
+			/*根据情况删除 min-weidth*/
+			min-width: 40px;
+			display: block;
+			margin-bottom: 2px;
+			padding: 5px;
+			/*同样不需要border 去掉*/
+			border: 1px solid #001a20;
+			text-indent: -999em;
+		}
+
+		.su-slider-btn {
+			width: 25px;
+			position: absolute;
+			/*因为这里没有使用translate控制坐标，所以 top left 的值，根据你的elemnt实际情况变化*/
+			top: 65px;
+			left: -36px;
+			padding: 5px;
+			background-color: #004457;
+			color: #99b2b8;
+			border: solid #001a20;
+			border-width: 1px 0 1px 1px;
+			border-radius: 3px 0 0 3px;
+			text-align: center;
+		}
+
+		.su-slider-btn:hover {
+			background-color: #005267;
+			color: #9bb7c0;
+			cursor: pointer;
+		}
+	</style>
+</head>
+<body>
+	<div class="su-slider">
+		<div class="su-slider-qq">
+			<a href="">这是QQ图片和链接</a>
+			<a href="">这是QQ图片和链接</a>
+			<a href="">这是QQ图片和链接</a>
+			<a href="">这是QQ图片和链接</a>
+			<a href="">这是QQ图片和链接</a>
+			<a href="">这是QQ图片和链接</a>
+		</div>
+		<div class="su-slider-btn ">点击隐藏</div>
+	</div>
+	<script src="http://libs.baidu.com/jquery/1.10.2/jquery.min.js"></script>
+	<script>
+		$('.su-slider-btn').on('click', function(){
+			if($(this).hasClass('su-slider-btn-active')){
+				$('.su-slider').animate({'right': '0'});
+				$(this).toggleClass('su-slider-btn-active').text('点击隐藏');
+			}else{
+				$('.su-slider').animate({'right': '-83px'});
+				$(this).toggleClass('su-slider-btn-active').text('点击展开');
+			}
+		});
+
+	</script>
+</body>
+</html>

@@ -1,0 +1,7 @@
+@charset 'utf-8';
+@import 'views/index';
+@import 'sprite/sprite';
+
+html {
+	background-image: radial-gradient( 50% 50%, circle closest-side, rgb(255,141,49) 0%, rgb(234,88,8) 98%);
+}

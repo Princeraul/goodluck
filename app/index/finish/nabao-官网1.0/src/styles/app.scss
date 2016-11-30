@@ -1,0 +1,46 @@
+@charset 'utf-8';
+
+.iconfont {
+	display: inline-block;
+
+	font-family: 'iconfont';
+
+	font-style: normal;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+a {
+	transition: all 0.5s;
+}
+
+body {
+	min-width: 1300px;
+}
+
+@import 'base/normalize';
+@import 'layout/header';
+@import 'layout/index';
+@import 'layout/footer';
+@import 'layout/rocket';
+
+//@import 'layout/sidenavbar'
+
+@import 'themes/about';
+@import 'themes/dataBank';
+@import 'themes/dataBankInfo';
+@import 'themes/productAndservice';
+@import 'themes/case';
+@import 'themes/calculator';
+@import 'components/shower';
+@import 'components/circleRound';
+@import 'components/number';
+@import 'components/process';
+@import 'components/ballRound';
+@import 'components/sprite';
+
+// putout sprite all;
+//
+// @include sprites($spritesheet-sprites);

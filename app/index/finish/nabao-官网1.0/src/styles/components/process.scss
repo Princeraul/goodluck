@@ -1,0 +1,282 @@
+.process-topbanner{
+	background: url(../images/2.png) #2993e1 center top no-repeat;
+	margin-top: 80px;
+	width: 100%;
+	height: 793px;
+	position: relative;
+	h3{
+		position: absolute;
+		left: 50%;
+		top: 0;
+		padding: 0;
+		opacity: 0;
+		margin-top: 0;
+		margin-left: -180px;
+		font-size: 58px;
+		font-weight: 510;
+		color: #fff;
+		animation-fill-mode: forwards;
+		animation-duration: 1s;
+		animation-delay: 1s;
+		animation-iteration-count: 1;
+		animation-name: process-topbanner-h3;
+	}
+	span{
+		font-size: 24px;
+		color: #fff;
+		position: absolute;
+	}
+	.ani-txt-1{
+		left: 50%;
+		top: 190px;
+		opacity: 0;
+		margin-right: 45px;
+		animation-fill-mode: forwards;
+		animation-duration: 1s;
+		animation-delay: 1.5s;
+		animation-iteration-count: 1;
+		animation-name: ani-txt-1;
+		i{
+			width: 35px;
+			height: 35px;
+			line-height: 35px;
+			margin-right: 10px;
+			text-align: center;
+			color: #79b4c7;
+			font-style: normal;
+			display: inline-block;
+			background-color: #ffeb9a;
+			border-radius: 100%;
+		}
+	}
+	.ani-txt-2{
+		opacity: 0;
+		left: 50%;
+	/*	margin-left: 40px;*/
+		top: 190px;
+		animation-fill-mode: forwards;
+		animation-duration: 1s;
+		animation-delay: 2s;
+		animation-iteration-count: 1;
+		animation-name: ani-txt-2;
+		i{
+			width: 35px;
+			height: 35px;
+			line-height: 35px;
+			margin-right: 10px;
+			text-align: center;
+			color: #79b4c7;
+			font-style: normal;
+			display: inline-block;
+			background-color: #ffc1a8;
+			border-radius: 100%;
+		}
+	}
+	.ani-txt-3{
+		opacity: 0;
+		right: 50%;
+    	top: 270px;
+    	animation-fill-mode: forwards;
+		animation-duration: .5s;
+		animation-delay: 2.5s;
+		animation-iteration-count: 1;
+		animation-name: ani-txt-3;
+		i{
+			width: 35px;
+			height: 35px;
+			line-height: 35px;
+			margin-right: 10px;
+			text-align: center;
+			color: #79b4c7;
+			font-style: normal;
+			display: inline-block;
+			background-color: #99ED99;
+			border-radius: 100%;
+		}
+	}
+	.ani-txt-4{
+		opacity: 0;
+		left: 50%;
+		margin-left: 40px;
+		top: 270px;
+		animation-fill-mode: forwards;
+		animation-duration: 1s;
+		animation-delay: 3s;
+		animation-iteration-count: 1;
+		animation-name: ani-txt-4;
+		i{
+			width: 35px;
+			height: 35px;
+			line-height: 35px;
+			margin-right: 10px;
+			text-align: center;
+			color: #79b4c7;
+			font-style: normal;
+			display: inline-block;
+			background-color: #ddbbff;
+			border-radius: 100%;
+		}
+	}
+}
+@keyframes process-topbanner-h3{
+	0%{
+		opacity: 0;
+		top: 0;
+	}
+	100%{
+		opacity: 1;
+		top: 80px;
+	}
+}
+@keyframes ani-txt-1{
+	0%{
+		opacity: 0;
+		margin-left: 0;
+	}
+	100%{
+		opacity: 1;
+		margin-left: -233px;
+	}
+}
+@keyframes ani-txt-2{
+	0%{
+		opacity: 0;
+		margin-left: 0;
+	}
+	100%{
+		opacity: 1;
+		margin-left: 40px;
+	}
+}
+@keyframes ani-txt-3{
+	0%{
+		opacity: 0;
+		margin-right: 0;
+	}
+	100%{
+		opacity: 1;
+		margin-right: 45px;
+	}
+}
+@keyframes ani-txt-4{
+	0%{
+		opacity: 0;
+		margin-left: 0;
+	}
+	100%{
+		opacity: 1;
+		margin-left: 40px;
+	}
+}
+.process-box{
+	width: 1156px;
+	margin: 0 auto;
+	padding-bottom: 100px;
+	position: relative;
+	span{
+		width: 60px;
+		height: 60px;
+		text-align: center;
+		line-height: 60px;
+		display: inline-block;
+		border-radius: 100%;
+		font-size: 32px;
+		color: #fff;
+		font-weight: 700;
+		position: absolute;
+	}
+}
+.process-1{
+	width: 1008px;
+	height: 375px;
+	background: url(../images/Process1.png) top center no-repeat;
+	margin-left: 148px;
+	position: relative;
+	.span-1{
+		background-color: #ffbc48;
+		/*box-shadow: 0 0 0 6px rgba(255,188,72, .5);*/
+		left: 238px;
+		top: 70px;
+		animation: shadow-1 1.5s infinite ease;
+	}
+	.span-2{
+		background-color: #ed6535;
+		/*box-shadow: 0 0 0 6px rgba(237,101,53, .5);*/
+		left: 530px;
+    	top: 210px;
+    	animation: shadow-2 1.5s infinite ease;
+	}
+}
+.process-2{
+	width: 1008px;
+	height: 326px;
+	background: url(../images/Process2.png) top center no-repeat;
+	margin-left: 148px;
+	position: relative;
+	span{
+		background-color: #9146e6;
+		box-shadow: 0 0 0 6px rgba(145,70,230, .5);
+		left: 242px;
+		top: 70px;
+		animation: shadow-3 1.5s infinite ease;
+	}
+}
+.process-3{
+	width: 1156px;
+	height: 146px;
+	background: url(../images/Process3.png) left top  no-repeat;
+	position: absolute;
+	z-index: 100;
+	span{
+		background-color: #2596f7;
+		box-shadow: 0 0 0 6px rgba(37,150,247, .5);
+		left: 700px;
+    	top: -30px;
+    	animation: shadow-4 1.5s infinite ease;
+	}
+}
+@keyframes shadow-1{
+	0%{
+		box-shadow: 0 0 0 0px rgba(255,188,72, .5);
+	}
+	50%{
+		box-shadow: 0 0 0 6px rgba(255,188,72, .5);
+	}
+	100%{
+		box-shadow: 0 0 0 0px rgba(255,188,72, .5);
+	}
+}
+@keyframes shadow-2{
+	0%{
+		box-shadow: 0 0 0 0px rgba(237,101,53, .5);
+	}
+	50%{
+		box-shadow: 0 0 0 6px rgba(237,101,53, .5);
+	}
+	100%{
+		box-shadow: 0 0 0 0px rgba(237,101,53, .5);
+	}
+}
+@keyframes shadow-3{
+
+	0%{
+		box-shadow: 0 0 0 0px rgba(145,70,230, .5);
+	}
+	50%{
+		box-shadow: 0 0 0 6px rgba(145,70,230, .5);
+	}
+	100%{
+		box-shadow: 0 0 0 0px rgba(145,70,230, .5);
+	}
+}
+@keyframes shadow-4{
+	0%{
+		box-shadow: 0 0 0 0px rgba(37,150,247, .5);
+	}
+	50%{
+		box-shadow: 0 0 0 6px rgba(37,150,247, .5);
+	}
+	100%{
+		box-shadow: 0 0 0 0px rgba(37,150,247, .5);
+	}
+}

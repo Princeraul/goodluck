@@ -1,0 +1,27 @@
+@charset 'UTF-8';
+
+$winer: #ee5151;
+$white: #fff;
+$button-base-text-color: $white;
+
+.btn {
+	display: inline-block;
+	width: 200px;
+	height: 40px;
+	color: $button-base-text-color;
+	font-size: 16px;
+	font-weight: bold;
+	text-shadow: 0 1px rgba(0, 0, 0, 0.1);
+	text-align: center;
+	text-decoration: none;
+	line-height: 40px;
+	border-radius: 8px;
+}
+
+.btn-winered {
+	background-color: $winer;
+
+	&:active {
+		background-color: lighten($winer, 5%);
+	}
+}

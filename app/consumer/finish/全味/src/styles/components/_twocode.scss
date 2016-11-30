@@ -1,0 +1,83 @@
+@charset 'UTF-8';
+@import 'dialog';
+
+.two-code {
+	@extend %transformScale;
+
+	width: 300px;
+	height: 407px;
+	text-align: center;
+
+	img {
+		width: 100%;
+		height: 100%;
+	}
+
+	.two-code-line {
+		position: absolute;
+		// top: 150px;
+		z-index: 999;
+		right: 50px;
+		width: 68px;
+		height: 2px;
+		background: url(../images/line.png) no-repeat;
+		background-size: 68px 2px;
+		animation: qrcode-line 2s infinite ease;
+	}
+}
+
+.small-two-small {
+	top: auto !important;
+	left: 50%;
+	bottom: 10px !important;
+	width: 220px;
+	height: 115px;
+	margin-left: -107px;
+	background-size: 220px 115px;
+	transform: scale(1) !important;
+
+	.two-code-line {
+		right: 10px;
+		animation: small-qrcode-line 2s infinite ease;
+	}
+}
+
+.dialog-active.two-code{
+	@extend %transformScale-active;
+
+	z-index: 999;
+}
+
+.touch-tip {
+	margin: 10px 0 0;
+	text-align: center;
+}
+
+@keyframes small-qrcode-line{
+	0%{
+		top: 15px;
+		opacity: 0;
+	}
+	50%{
+		opacity: 1;
+	}
+	100%{
+		top: 90px;;
+		opacity: 0;
+	}
+}
+
+
+@keyframes qrcode-line{
+	0%{
+		top: 145px;
+		opacity: 0;
+	}
+	50%{
+		opacity: 1;
+	}
+	100%{
+		top: 215px;;
+		opacity: 0;
+	}
+}

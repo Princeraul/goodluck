@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<style type="text/css">
+	ul,
+	li {
+		margin: 0;
+		padding: 3px 0;
+		list-style: none;
+	}
+
+	.container {
+		width: 352px;
+	}
+
+	.item {
+		padding: 3px 5px;
+		cursor: pointer;
+	}
+
+	.first {
+		border: solid rgb(190, 190, 190) 1px;
+		width: 350px;
+	}
+
+	input {
+		border: 0;
+		width: 288px;
+		height: 30px;
+		font-size: 16px;
+		padding: 0 5px;
+		line-height: 30px;
+	}
+
+	.first input:focus {
+		outline: none;
+	}
+
+	.appendUL {
+		border: solid rgb(190, 190, 190) 1px;
+		border-top: 0;
+		overflow-y: auto;
+		overflow-x: hidden;
+		display: none;
+		max-height: 120px;
+	}
+
+	.appendUL .itemhover {
+		background-color: rgba(0, 0, 0, .1);
+	}
+</style>
+</head>
+
+<body>
+	<div class="container" id="search1">
+		<div class="content">
+			<div class="first">
+				<input class="searchVagueInput" placeholder="输入关键字模糊匹配" />
+			</div>
+			<ul class="appendUL" style="display: block">
+			</ul>
+		</div>
+	</div>
+
+	<script src="http://libs.baidu.com/jquery/1.10.2/jquery.min.js"></script>
+	<script src="search.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,264 @@
+@charset 'utf-8';
+@import 'base/normalize';
+@import 'components/font';
+@import 'components/color';
+@import 'components/dialog';
+@import 'components/loading';
+@import 'components/button';
+// @import 'components/twocode';
+@import 'layout/weblayout';
+@import 'layout/grid';
+
+// 初始化dialog
+@include dialog;
+
+.jiamo {
+	height: inherit;
+	padding-bottom: 70px;
+}
+
+.jiamo-list {
+	padding: 0;
+	margin: 0;
+	background-color: #fff;
+
+	a {
+		color: #333;
+		text-decoration: none;
+	}
+
+	li {
+		box-sizing: border-box;
+		position: relative;
+		height: 50px;
+		padding-left: 2.5%;
+		border-bottom: 1px solid #e9e9e9;
+		line-height: 50px;
+		list-style: none;
+
+		&::before {
+			content: '';
+			position: absolute;
+			top: 50%;
+			right: 3%;
+			width: 10px;
+			height: 10px;
+			margin-top: -5px;
+			border-width: 1px 1px 0 0;
+			border-style: solid;
+			border-color: #777;
+			transform: rotate(45deg);
+		}
+
+		&:active {
+			background-color: #ccc;
+		}
+	}
+}
+
+.page-item {
+	overflow: hidden;
+	padding: 0;
+	margin: 0;
+
+	li {
+		box-sizing: border-box;
+		float: left;
+		width: 48%;
+		margin-bottom: 15px;
+		background-color: #FCFFF6;
+		list-style: none;
+		text-align: center;
+
+		&:nth-child(odd) {
+			margin-right: 2%;
+		}
+
+		&:nth-child(even) {
+			margin-left: 2%;
+		}
+	}
+
+	img {
+		width: 130px;
+		height: 130px;
+	}
+
+	span {
+		display: block;
+		height: 40px;
+		background-color: #c6c6c6;
+		color: #333;
+		line-height: 40px;
+	}
+}
+
+.draw-from {
+	position: relative;
+	width: 80%;
+	height: 120px;
+	padding-top: 60px;
+	margin: 35px auto 0;
+	background-color: #ffc555;
+	border-radius: 30px;
+
+	&::before {
+		$widthSize: 250px;
+		$heightSize: 150px;
+
+		content: '';
+		position: absolute;
+		top: -92px;
+		left: 50%;
+		width: $widthSize;
+		height: $heightSize;
+		margin-left: -125px;
+		background: url('../images/gift.png') no-repeat;
+		background-size: $widthSize $heightSize;
+	}
+}
+
+.packet-bg {
+	position: absolute;
+	left: 50%;
+	width: 310px;
+	height: 225px;
+	margin-left: -155px;
+	margin-top: 45px;
+	background: url('../images/2.png') 0 0 no-repeat;
+	background-size: 310px 225px;
+}
+
+
+.logo {
+	width: 68px;
+	height: 51px;
+	margin: 15px 0 0 25px;
+	background: url('../images/logo.png') no-repeat;
+	background-size: 68px 51px;
+}
+
+.nowin-bg {
+	position: absolute;
+	z-index: -1;
+	top: 0;
+	left: 0;
+	mix-blend-mode: soft-light;
+}
+
+.win-img {
+	width: 104px;
+	height: 36px;
+	margin: 20px auto 10px;
+	background: url('../images/winner.png') no-repeat;
+	background-size: 104px 36px;
+}
+
+.win-tel {
+	width: 56px;
+	height: 110px;
+	background: url(../images/telphone.png) no-repeat;
+	background-size: 56px 110px;
+}
+
+.nowin-img {
+	width: 100px;
+	height: 225px;
+	margin: -20px auto 10px;
+	background: url('../images/nowin.png') no-repeat;
+	background-size: 100px 225px;
+}
+
+.nowin {
+	color: #fff;
+	text-align: center;
+
+	b {
+		color: #eb1b29;
+		font-size: 18px;
+	}
+}
+
+
+.win-info {
+	padding: 0 12%;
+	margin: 20px auto 0;
+	color: #ffe139;
+	font-size: 16px;
+	line-height: 1.3;
+}
+
+.copyright {
+	margin-top: 50px;
+	color: #4d83d5;
+	font-size: 12px;
+	text-align: center;
+}
+
+.copyright-s {
+	color: #777;
+}
+
+.jiamo-cot {
+	overflow: hidden;
+	padding: 0 10px 20px;
+	margin: 0 10px;
+	background-color: #fff;
+	color: #333;
+
+	h3,
+	span {
+		display: block;
+		color: #306dc8;
+		font-size: 18px;
+		font-weight: normal;
+	}
+
+	p {
+		padding-top: 10px;
+		margin: 0;
+		text-indent: 2em;
+	}
+}
+
+$color-array: #ffa15b #f1bebe #759fff #2760d6;
+
+// footer
+.jiamo-footer-navbar {
+	position: fixed;
+	z-index: 1;
+	bottom: 0;
+	left: 0;
+	overflow: hidden;
+	width: 100%;
+	height: 50px;
+	padding: 0;
+	margin: 0;
+	background-color: #fff;
+	text-align: center;
+
+	.iconfont {
+		display: block;
+		font-size: 18px;
+	}
+
+	a {
+		box-sizing: border-box;
+		padding: 3px 0 0;
+		color: #555;
+		border-right: 1px solid #ccc;
+		font-size: 14px;
+		text-decoration: none;
+
+		&:last-of-type {
+			border: 0;
+		}
+
+		@each $i  in $color-array {
+			$key: index($color-array, $i);
+			&:nth-of-type(#{$key}) .iconfont{
+				color: $i;
+			}
+		}
+	}
+}

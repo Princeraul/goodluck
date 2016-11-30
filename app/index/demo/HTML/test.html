@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+
+<body>
+	<div></div>
+	<script src="http://libs.baidu.com/jquery/1.10.2/jquery.min.js"></script>
+	<script>
+		'use strict';
+		var x = "w3cplus";
+		//
+		// (function a() {
+		//     var x = 10;
+		//     setTimeout(function(){ console.log(x)},0);
+		//     var x = 12;
+		//     setTimeout(function(){ console.log(x)},0);
+		//     var x = 13;
+		//     setTimeout(function(){ console.log(x)},0);
+		//     var x = 14;
+		//     setTimeout(function(){ console.log(x)},0);
+		// })();
+		var foo = 1;
+		function bar () {
+			console.log(a)
+		    if (!foo) {
+		         foo = 10;
+		    }
+		    console.log(foo);
+		}
+		bar();
+		// var foo = 1
+
+
+		function a(c) {
+			this.b = c;
+			this.d = function () {
+				// alert(this.b);
+			}
+		}
+		var A = new a();
+
+		function Animal(name) {
+		    this.name = name;
+		    this.showName = function() {
+		        console.log(this.name);
+		    }
+		}
+
+		function Cat(name) {
+			this.xx = 20;
+		    Animal.call(this, name);
+		}
+
+		Cat.prototype.age = function(){
+			alert(this.xx)
+		}
+
+		var cat = new Cat("Black Cat");
+		cat.showName();
+		cat.age();
+		// cat.showName();
+		// cat.age('10');
+
+		var str = '首页|礼包|奖卷|';
+		var newStr = str.replace(/([^|]+)\|?/g, "<span>$1</span>");
+		console.log(newStr);
+
+		$('.mian').on({
+			click: function (e) {
+				if ($(e.target).is('.addEle')) {
+					var template = '<div class="newEle">这是新添加的element</div>';
+					$(this).append(template);
+				}
+			},
+			mouseleave: function (e) {
+				if ($(e.target).is('.newEle')) {
+					console.log(1)
+					var template = '<div>这是element元素触发事件新添加的元素</div>';
+					$(e.target).append(template);
+				}
+			}
+		})
+	</script>
+</body>
+
+</html>

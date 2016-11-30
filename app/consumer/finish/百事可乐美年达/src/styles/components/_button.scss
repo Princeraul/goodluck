@@ -1,0 +1,90 @@
+@charset 'UTF-8';
+
+$winer: #e03a3a;
+$white: #fff;
+$button-base-text-color: $white;
+$light-winer: #ee5151;
+
+.btn {
+	display: block;
+	width: 70%;
+	height: 45px;
+	margin: 15px auto;
+	color: $button-base-text-color;
+	border-radius: 8px;
+	border: 0;
+	font-size: 16px;
+	font-weight: bold;
+	text-shadow: 0 1px rgba(0, 0, 0, 0.1);
+	text-align: center;
+	text-decoration: none;
+	line-height: 45px;
+
+}
+
+.btn-only {
+	margin: 40px auto;
+}
+
+.btn-default {
+	$bg-color: #f99023;
+	$br-color: #c66909;
+
+	border: 1px solid $br-color;
+	background-color: $bg-color;
+
+	&:active {
+		background-color: lighten($bg-color, 5%);
+		border: 0;
+	}
+}
+
+.btn-winered {
+	background-color: $winer;
+	margin-bottom: 70px;
+
+	&:active {
+		background-color: lighten($winer, 5%);
+	}
+}
+
+.btn-light-winered {
+	background-color: $light-winer;
+	margin-bottom: 70px;
+
+	&:active {
+		background-color: lighten($light-winer, 5%);
+	}
+}
+
+.btn-gradual-yellow {
+	background-image: linear-gradient(to top, rgb(240,184,1) 2%, rgb(244,232,15) 100%);
+	color: #ee610f;
+
+	&:active {
+		background-image: linear-gradient(to top, rgb(244,232,15) 2%, rgb(240,184,1) 100%);
+	}
+}
+
+
+// input
+
+.inp-default {
+	display: block;
+	box-sizing: border-box;
+	width: 70%;
+	height: 45px;
+	margin: 0 auto;
+	background-color: transparent;
+	color: #ee5151;
+	border: 1px solid #ee5151;
+	border-radius: 10px;
+	font-size: 16px;
+	text-align: center;
+	line-height: 40px;
+
+	&::-webkit-input-placeholder {
+		color: #ee5151;
+		line-height: 40px;
+	}
+}

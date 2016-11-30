@@ -1,0 +1,145 @@
+// author: Princeraul
+// email: suliangprinceraul@gmail.com
+// time: 2016-09-14
+@charset 'utf-8';
+// @import 'layout/grid';
+@import 'page-public';
+@import 'list';
+
+html {
+	min-height: 100%;
+	background-color: #fa3935;
+	color: #555;
+}
+
+img {
+	vertical-align: middle;
+}
+
+.webview {
+	padding-bottom: 70px;
+}
+
+// 初始化icon
+.iconfont {
+	@extend %iconfont;
+
+	display: inline-block;
+}
+
+.icon-fwsy::before {
+	@extend %icon-fwsy;
+	color: map-get($icon-color, 'red');
+}
+
+.icon-fwsy::before {
+	@extend %icon-fwsy;
+	color: map-get($icon-color, 'red');
+}
+
+.icon-recommend::before {
+	@extend %icon-recommend;
+	color: map-get($icon-color, 'red');
+}
+
+.icon-game::before {
+	@extend %icon-game;
+	color: map-get($icon-color, 'red');
+}
+
+
+
+.icon-zhengpin {
+	@include box-background-size(89px, 97px, url(../images/5.png) center no-repeat);
+	margin: 40px auto 15px;
+}
+
+// 活动介绍
+.game-info-dialog {
+	@extend %bottom-view;
+	z-index: z('below');
+	opacity: 0;
+	transition: all 0.2s;
+
+	.title {
+		@include box-background-size(300px, 185px, url(../images/game-title.png) no-repeat);
+
+		position: absolute;
+		top: -30px;
+		left: -8px;
+
+	}
+
+	.game-info-cot {
+		@extend %translate-absolute-center;
+
+		box-sizing: border-box;
+		opacity: 0;
+		visibility: hidden;
+		width: 90%;
+		max-width: 700px;
+		transform: translate(-50%, -50%) scale(0);
+		transition: all 0.2s;
+
+		.game-info-cot-bg {
+			padding: 15px;
+			background-color: $white;
+		}
+
+		h3 {
+			padding: 0;
+			margin: 0  0 3px;
+			color: $red;
+			font-size: 16px;
+		}
+
+		p {
+			padding: 0;
+			margin: 0 0 10px;
+			font-size: 16px;
+		}
+
+		.p1 {
+			margin-top: 50px;
+		}
+
+		// &::before {
+		// 	content: '';
+		// 	position: fixed;
+		// 	z-index: -666;
+		// 	top: 0;
+		// 	left: 0;
+		// 	width: 100%;
+		// 	height: 100%;
+		// 	background-color: #c5c5c5;
+		// 	transform: rotate(3deg);
+		// }
+
+		.colse-game-info-cot {
+			position: absolute;
+			right: -16px;
+			top: -16px;
+			width: 32px;
+			height: 32px;
+			background-color: #fe5a34;
+			border-radius: 100%;
+			color: $white;
+			text-align: center;
+			line-height: 32px;
+			text-decoration: none;
+		}
+	}
+
+	.game-info-cot.element-active {
+		@extend %scaleactive;
+		z-index: z('shoryuken');
+	}
+}
+
+.game-info-dialog.game-info-dialog-actvive {
+	z-index: z('default');
+	opacity: 1;
+}
+
+// footer
+@include footer();

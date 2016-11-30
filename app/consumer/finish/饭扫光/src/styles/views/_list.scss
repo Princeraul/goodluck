@@ -1,0 +1,98 @@
+
+// page
+.page {
+	padding: 0 3% 10px;
+	margin: 0 3%;
+	background-color: $white;
+
+	h3 {
+		padding: 10px 0 0;
+		margin: 0 0 5px 0;
+		color: #d83939;
+	}
+
+	p {
+		padding: 0;
+		margin: 5px 0;
+		text-indent: 2em;
+		line-height: 1.6;
+   }
+
+   .icon-company {
+	   margin-right: 5px;
+	   font-size: 20px;
+	   vertical-align: bottom;
+   }
+}
+
+.copyright {
+	margin-top: 35px;
+	color: $graylittle;
+	font-size: 12px;
+	text-align: center;
+}
+
+// footer
+@include footer();
+
+// 初始化icon
+.iconfont {
+	@extend %iconfont;
+
+	display: inline-block;
+}
+
+.icon-company::before {
+	@extend %icon-company;
+	color: map-get($icon-color, 'red');
+}
+
+.icon-product::before {
+	@extend %icon-product;
+	color: map-get($icon-color, 'red');
+}
+
+.product-item {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+
+	li {
+		display: table;
+		overflow: hidden;
+		margin-bottom: 15px;
+		width: 100%;
+		background-color: $white;
+	}
+
+	.product-item-img {
+		display: table-cell;
+		padding: 15px;
+		background-color: #FFFCF3;
+		text-align: center;
+		vertical-align: middle;
+
+		img {
+			width: 85px;
+			height: 100px;
+		}
+	}
+
+	.product-item-txt {
+		display: table-cell;
+		padding: 15px;
+		font-size: 14px;
+		vertical-align: middle;
+
+		h3 {
+			color: #dc0a00;
+			margin: 0;
+			padding: 0
+		}
+
+		p {
+			margin: 0;
+			padding: 0
+		}
+	}
+}

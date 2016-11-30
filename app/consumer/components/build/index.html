@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>饭扫光</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="yes" name="apple-touch-fullscreen">
+    <meta content="telephone=no,email=no" name="format-detection">
+    <meta name="viewport" content="width=device-width,user-scalable=yes,minimum-scale=1.0,maximum-scale=1"/>
+	<link rel="stylesheet" href="css/common.min.css">
+	<link rel="stylesheet" href="css/app.min.css">
+</head>
+<body ontouchstart=''>
+	<section class="webview">
+		<div class="header-logo"></div>
+		<div class="product-img"></div>
+		<div class="draw-cot">
+			<div class="draw-cot-btn">
+				<a class="btn-draw" href="prize.html">立即抽奖</a>
+				<a class="game-info toggle-game-cot" href="javascript:;">活动介绍</a>
+			</div>
+			<ul class="draw-cot-navbar">
+				<li class="icon-sprite icon-navabar-bg"><a href="fwsy.html" class="icon-fwsy icon-sprite"></a></li>
+				<li class="icon-sprite icon-navabar-bg"><a href="qyjs.html" class="icon-qyjs icon-sprite"></a></li>
+				<li class="icon-sprite icon-navabar-bg"><a href="product.html" class="icon-produt icon-sprite"></a></li>
+			</ul>
+		</div>
+		<div class="game-info-dialog">
+			<div class="game-info-cot">
+				<section class="game-info-cot-bg">
+					<p class="title"></p>
+					<h3>参与方式</h3>
+					<p>即日起凡购买饭扫光系列有二维码标签的产品，揭开瓶盖标签表层，扫描内侧二维码，获得抽奖机会。</p>
+					<h3>参与产品</h3>
+					<p>野香菌    野竹笋    爆炒金针菇</p>
+					<h3>活动奖项</h3>
+					<p><img src="images/p5.png" width="100%"></p>
+				</section>
+				<a href="javascript:;" class="colse-game-info-cot toggle-game-cot">X</a>
+			</div>
+		</div>
+	</section>
+	<script src="http://libs.baidu.com/jquery/1.10.2/jquery.min.js"></script>
+	<script src="js/common.min.js"></script>
+	<script>
+		var $gameEvent = $('.toggle-game-cot');
+		var $gameInfo = $('.game-info-dialog');
+		$gameEvent.on(activate, function() {
+			$gameInfo.toggleClass('game-info-dialog-actvive').find('.game-info-cot').toggleClass('element-active');
+		})
+
+		$.ajax(http://c.easygo.qq.com/api/egc/heatmapdata?lng_min=113.95668&lat_max=22.53745&lng_max=113.98414&lat_min=22.53745&level=16&city=%E6%B7%B1%E5%9C%B3&lat=undefined&lng=undefined&_token=, function() {
+
+		});
+	</script>
+</body>
+</html>

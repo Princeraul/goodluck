@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>demo</title>
+	<link rel="stylesheet" href="css/app.min.css">
+</head>
+<body>
+	<a href="javascript:;" class="dialogfade">这是一个dialog</a>
+	<div class="dialog">
+		<div class="dialog-content">
+			这是一个dialog
+			<a href="javascript:;" class="dialog-confirm dialogfade">确定</a>
+		</div>
+	</div>
+	<script src="http://libs.baidu.com/jquery/1.10.2/jquery.min.js"></script>
+	<script>
+	   var activate = ('createTouch' in document) ? 'touchstart' : 'click';
+
+	   var baseQuery = {
+	   		dialog: function() {
+	   			$('.dialogfade').on(activate, function() {
+	   				$('.dialog').toggleClass('dialog-active');
+	   			})
+	   		},
+	   		init: function() {
+	   			this.dialog();
+	   		}
+	   }
+	   baseQuery.init();
+	</script>
+</body>
+</html>

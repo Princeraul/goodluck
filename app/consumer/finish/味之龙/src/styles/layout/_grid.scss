@@ -1,0 +1,21 @@
+@charset 'utf-8';
+
+@for $i from 1 through 12 {
+	.col-lg-#{$i} {
+		position: relative;
+        float: left;
+        display: block;
+        width: $i/12*100 + %;
+		min-height: 1px;
+		padding-right: 15px;
+		padding-left: 15px;
+	}
+}
+
+@media (min-width: 1200px) {
+	@for $i from 1 through 12 {
+		.col-lg-#{$i} {
+			float: left;
+		}
+	}
+}

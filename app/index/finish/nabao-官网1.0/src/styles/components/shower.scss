@@ -1,0 +1,141 @@
+.meteor-shower{
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+}
+.meteorShower{
+	transform-origin: 0% 0%;
+	position: absolute;
+	/*初始坐标*/
+	top: 0 ;
+	z-index: 1;
+	height: 100%;
+}
+/*left 表示方向左*/
+.meteorShower-left{
+	transform: rotate(-45deg);
+}
+/*meteorShowerstar pulic class*/
+.meteorShower-star{
+	position: absolute;
+    opacity: 0;
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    background-position: left top;
+    animation-name: meteorShowerRemove;
+    /*animation-iteration-count: 1;*/
+    animation-fill-mode: forwards;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    /*animation: meteorShowerRemove 1s infinite;*/
+}
+/*第一个流星*/
+.meteorShower-1{
+	width: 24px;
+	height: 220px;
+	background-image: url(../images/star1.png);
+/*	animation-delay: 1500ms;
+	animation-duration: 1800ms;*/
+}
+/*第二个流星*/
+.meteorShower-2{
+	width: 24px;
+	height: 263px;
+	/*left: 260px;*/
+	background-image: url(../images/star2.png);
+/*	animation-delay: 750ms;
+	animation-duration: 1500ms;*/
+}
+/*第三个流星*/
+.meteorShower-3{
+	width: 23px;
+	height: 219px;
+	background-image: url(../images/star3.png) ;
+/*	left: 160px;
+	animation-delay: 150ms;
+	animation-duration: 2000ms;*/
+}
+@keyframes meteorShowerRemove{
+	0%{
+		opacity: 0;
+		top: 0;
+	}
+	10%{
+		opacity: .3
+	}
+	90%{
+		opacity: 1;
+	}
+	100%{
+		opacity: 1;
+		top: 150%;
+	}
+}
+
+@component star{
+	transform-origin: 0% 0%;
+	position: absolute;
+	top: 0;
+	@descendent left{
+		transform: rotate(-45deg);
+	}
+	@descendent 1{
+		width: 21px;
+		.star-ani{
+			background-image: url(../images/star1.png)
+		}
+	}
+	@descendent 2{
+		width: 11px;
+		left: 100px;
+		.star-ani{
+			background-image: url(../images/star2.png)
+		}
+	}
+	@descendent 3{
+		width: 13px;
+		left: 50px;
+		.star-ani{
+			background-image: url(../images/star3.png)
+		}
+	}
+}
+@component star-ani{
+	position: absolute;
+    opacity: 0;
+    width: 100%;
+    height: 400px;
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    background-position: left top;
+    animation-name: star-ani;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    animation-timing-function: linear;
+    animation: star-ani 1s infinite;
+}
+.star-remove .star-ani {
+    animation-name: star-ani
+}
+
+@keyframes star-ani{
+	0% {
+        opacity: 0;
+        top: 0%
+    }
+    10% {
+        opacity: 1
+    }
+    90% {
+        opacity: 1
+    }
+    100% {
+        opacity: 1;
+        top: 100%
+    }
+}

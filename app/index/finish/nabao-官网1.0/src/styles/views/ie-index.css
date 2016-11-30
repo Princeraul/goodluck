@@ -1,0 +1,8 @@
+.ie-mian{
+	min-height: 840px;
+	width: 1920px;
+	background: url(../images/indexImg.png) #00254a center center no-repeat;
+}
+.ie-mian .header{
+	position: static;
+}

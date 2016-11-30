@@ -1,0 +1,267 @@
+@font-face {
+	font-family: 'iconfont';
+	src: url('../fonts/iconfont.eot');
+	/* IE9*/
+	src: url('../fonts/iconfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+	url('../fonts/iconfont.woff') format('woff'), /* chrome、firefox */
+	url('../fonts/iconfont.ttf') format('truetype'), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+	url('../fonts/iconfont.svg#iconfont') format('svg');
+	/* iOS 4.1- */
+}
+
+.sliderRocket {
+	position: fixed;
+	z-index: 999;
+	right: 50px;
+	bottom: 92px;
+	background: url(../images/rocketRound.png) no-repeat;
+	width: 180px;
+	height: 180px;
+	opacity: 0;
+	animation-fill-mode: forwards;
+	animation-duration: 1s;
+	animation-delay: 1s;
+	animation-iteration-count: 1;
+	animation-name: zoomIn;
+	/*cursor: pointer;*/
+	transition: .5s all;
+}
+
+.rocketFloat {
+	width: 180px;
+	height: 210px;
+	border-radius: 100%;
+	background-color: transparent;
+	position: absolute;
+	overflow: hidden;
+	/*top: 0;*/
+	bottom: 48px;
+	overflow: hidden;
+}
+
+.rocket {
+	width: 100px;
+	height: 159px;
+	left: 50%;
+	margin-left: -55px;
+	bottom: -159px;
+	position: absolute;
+	background: url(../images/rocket.png) no-repeat;
+	animation-fill-mode: forwards;
+	animation-duration: 2s;
+	animation-delay: 2s;
+	animation-iteration-count: 1;
+	animation-name: slideInUp;
+	z-index: 65;
+}
+
+@keyframes zoomIn {
+	0% {
+		opacity: 0;
+		-webkit-transform: scale3d(.3, .3, .3);
+		transform: scale3d(.3, .3, .3);
+	}
+	50% {
+		opacity: 1;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+
+@keyframes slideInUp {
+	from {
+		bottom: -159px;
+		visibility: visible;
+	}
+	to {
+		bottom: 2px;
+	}
+}
+
+.sliderRocket-navbar {
+	position: relative;
+	list-style: none;
+	.iconfont {
+		cursor: pointer;
+		font-size: 30px;
+		text-decoration: none;
+		position: absolute;
+		left: 0;
+		top: 0;
+		color: #479AC6;
+		margin-left: 10px;
+		width: 32px;
+		height: 36px;
+		z-index: 1;
+		transition: color .3s;
+	}
+	li {
+		opacity: 0;
+		width: 52px;
+		height: 36px;
+		position: absolute;
+		z-index: 10;
+		animation: pulse .5s ease both;
+		&:nth-child(1) {
+			left: -10px;
+			top: -40px;
+			animation-delay: 4s;
+		}
+		&:nth-child(2) {
+			left: -49px;
+			top: 18px;
+			animation-delay: 4.5s;
+		}
+		&:nth-child(3) {
+			left: -40px;
+			bottom: -125px;
+			animation-delay: 5s;
+		}
+		div{
+			position: absolute;
+            z-index: 999;
+			left: auto;
+			top: 0;
+			right: -15px;
+            padding: 30px;
+		}
+		span{
+            position: absolute;
+            z-index: 999;
+			width: 0;
+			left: auto;
+			right: 75px;
+			top: 0;
+			overflow: hidden;
+			background-color: #5EAFE3;
+			white-space: nowrap;
+			border-radius: 5px;
+			transition: all .3s;
+			text-indent: -160px;
+			text-align: center;
+			display: block;
+
+			&::after{
+				width: 0;
+				height: 0;
+				content: '';
+				position: absolute;
+				right: -15px;
+				top: 50%;
+			};
+
+			&.icon-tel-float{
+				top: -16px;
+				small{
+					display: block;
+					font-size: 16px;
+					text-align: center;
+				}
+				font{
+					color: #fff;
+					font-size: 22px;
+					display: block;
+					font-weight: 700;
+				}
+			}
+			&.icon-qq-float{
+				background: url(../images/qq.png) 8px 10px #5EAFE3 no-repeat;
+				left: auto;
+				top: -9px;
+				height: 50px;
+				line-height: 50px;
+				text-align: left;
+				img{
+					vertical-align: -8px;
+					margin-right: 4px;
+				}
+			}
+			&.icon-kf-float{
+				background: url(../images/kf.png) 8px 10px #5EAFE3 no-repeat;
+				left: auto;
+				top: -9px;
+				height: 50px;
+				line-height: 50px;
+				text-align: left;
+				img{
+					vertical-align: -10px;
+					margin-right: 4px;
+				}
+			}
+			&.icon-ewm-float{
+				background: url(../images/ewm.png) 10px 10px #5EAFE3 no-repeat;
+				height: 120px;
+				left: auto;
+				top: -65px;
+				text-align: left;
+				&::after{
+					top: 70%;
+				};
+			}
+		}
+		a{
+			color: #fff
+		}
+		&:hover{
+			.iconfont {
+				color: #78D3FD;
+			}
+			span{
+				text-indent: 0;
+				z-index: 999;
+			}
+			span::after{
+				margin-top: -10px;
+				border-top: 10px solid transparent;
+				border-left: 20px solid #5EAFE3;
+				border-bottom: 10px solid transparent;
+			}
+			span.icon-tel-float{
+				width: 205px;
+				padding: 8px 15px;
+				overflow: visible;
+			}
+			span.icon-qq-float{
+				width: 160px;
+				overflow: visible;
+				padding-left: 45px;
+				img{
+					vertical-align: -8px;
+					margin-right: 4px;
+				}
+			}
+			span.icon-kf-float{
+				overflow: visible;
+				width: 130px;
+				padding-left: 45px;
+				img{
+					vertical-align: -10px;
+					margin-right: 4px;
+				}
+			}
+			span.icon-ewm-float{
+				overflow: visible;
+				width: 120px;
+				img{
+					vertical-align: middle;
+				}
+				&::after{
+					top: 70%;
+				};
+			}
+		}
+	}
+	div {
+		/*display: none;*/
+	}
+}
+
+@keyframes pulse {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}

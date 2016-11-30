@@ -1,0 +1,27 @@
+@charset 'UTF-8';
+@import 'components/sprite';
+
+.pic {
+	@include sprite-image($pic-1-hover);
+}
+
+@mixin sprites-size($sprites) {
+
+	@each $sprite in $sprites {
+		$sprite-name: nth($sprite, 10);
+
+		@if(str-index($sprite-name ,'-hover')) {
+			.#{str-slice($sprite-name, 0, -7)}:hover {
+				@include sprite-position($sprite);
+			}
+		}@else {
+			.#{$sprite-name} {
+				@include sprite-position($sprite);
+				@include sprite-width($sprite);
+				@include sprite-height($sprite);
+			}
+		}
+	}
+}
+
+@include sprites-size($spritesheet-sprites);

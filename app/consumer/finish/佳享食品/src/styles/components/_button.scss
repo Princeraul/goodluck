@@ -1,0 +1,44 @@
+@charset 'UTF-8';
+
+$winer: #ee5151;
+$white: #fff;
+$button-base-text-color: $white;
+
+.btn {
+	display: block;
+	width: 80%;
+	height: 45px;
+	margin: 10px auto;
+	color: $button-base-text-color;
+	font-size: 16px;
+	font-weight: bold;
+	text-shadow: 0 1px rgba(0, 0, 0, 0.1);
+	text-align: center;
+	text-decoration: none;
+	line-height: 40px;
+	border-radius: 8px;
+}
+
+.btn-only {
+	margin: 40px auto;
+}
+
+.btn-default {
+	$bg-color: #f99023;
+	$br-color: #c66909;
+
+	border: 1px solid $br-color;
+	background-color: $bg-color ;
+
+	&:active {
+		background-color: lighten($bg-color, 5%);
+	}
+}
+
+.btn-winered {
+	background-color: $winer;
+
+	&:active {
+		background-color: lighten($winer, 5%);
+	}
+}

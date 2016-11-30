@@ -1,0 +1,217 @@
+$base-backgroundColor: #00254a;
+body,html{
+    width: 100%;
+    height: 100%;
+    font-family: 'Microsoft yahei';
+}
+.indexBodyBg{
+    background: url(../images/star_bg.png)  no-repeat;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    z-index: -1;
+}
+.indexMain{
+    min-width: 1300px;
+    padding-top: 155px;
+    /*margin-bottom: 15px;*/
+    position: relative;
+    overflow: hidden;
+}
+.indexAnimate{
+    position: relative;
+    width: 1260px;
+    height: 736px;
+    margin: 0 auto;
+    .indexAnimate-circle{
+        width: 587px;
+        height: 588px;
+        border-radius: 100%;
+        left: 50%;
+        margin-left: -245px; 
+        font{
+            width: 500px;
+            height: 500px;
+            border-radius: 100%;
+            text-indent: -9999px;
+            border-color: transparent;
+            position: absolute;
+            left: 0;
+            top: 0;
+            z-index: 10;
+            cursor:pointer;
+        }
+        font:hover{
+            box-shadow: 0 0 24px 8px #3ba4e2;
+        }
+       /* z-index: 10;*/
+        position: absolute;
+        >div{
+            position: absolute;
+            img{
+                display: inline-block;
+                vertical-align: middle;
+            }
+        };
+        .ball-1{
+            top: 0;
+            z-index:1;
+            background: url(../images/round-top.png) no-repeat;
+            width: 500px;
+            height: 264px;
+        }
+        .ball-2{
+            top: 264px;
+            z-index: 0;
+            background: url(../images/round-bottom.png) no-repeat;
+            width: 500px;
+            height: 237px;
+        }
+        /*box-shadow: 1px 1px 30px 10px rgba(131, 210, 255, .35);*/
+    }
+    .indexAnimate-star{
+        width: 1301px;
+        height: 628px;
+        background: url(../images/star.png) top center no-repeat;
+        background-size: 100% 100%;
+        position: absolute;
+        top: 10px;
+        left: -25px;
+        opacity: 1;
+        z-index: 10;
+        /*transform: translate(-50%, 0);*/
+        animation: banstar 5s infinite;
+    }
+}
+.total-title{
+    position: relative;
+    margin-top: 129px;
+    text-align: center;
+}
+.total-title-20{
+    color: #FFF;
+    font-size: 20px;
+    display: block;
+    font-weight: 700;
+}
+.total-title-fontImg{
+    margin-top: 2px;
+    color: #FFF;
+    font-weight: 700;
+    font-size: 31px;
+    text-shadow: 0 1px 3px rgba(0,0,0,.3);
+    display: block;
+}
+.banner-operate{
+    text-align: center;
+    position: relative;
+    z-index: 10;
+    em{
+        font-style: normal;
+        color: #fff;
+        font-size: 18px;
+    }
+    span{
+        display: block;
+    }
+}
+.food,
+.meat,
+.somke,
+.drink,
+.dailySupplies{
+    width: 150px;
+    height: 150px; 
+    position: absolute;
+    border-radius: 100%;
+}
+.food{
+    right: 422px;
+    top: 515px;
+    background-color: rgba(209,47,173,.85);
+    span{
+        margin-top: 40px;
+    }
+    &:hover{
+        background-color:  rgba(209,47,173,1);
+        box-shadow: 0 0 0 6px rgba(209,47,173,.55);
+    };
+}
+.drink{
+    top: 445px;
+    left: 220px;
+    background-color: rgba(242,139, 83,.85);
+    span{
+        margin-top: 30px;
+    }
+    &:hover{
+        background-color: rgba(242,139,83,1);
+        box-shadow: 0 0 0 6px rgba(242,139,83,.55);
+    };
+}
+.somke{
+    top: 100px;
+    left: 50px;
+    background-color: rgba(242,180,83, .85);
+     span{
+        margin-top: 20px;
+    }
+    &:hover{
+        background-color: rgba(242,180,83, 1);
+        box-shadow: 0 0 0 6px rgba(242,180,83, .55);
+    };
+}
+.meat{
+    right: 220px;
+    top: 35px;
+    background-color: rgba(107,172,49, .85);
+    span{
+        margin-top: 35px;
+    }
+    &:hover{
+        background-color: rgba(107,172,49, 1);
+        box-shadow: 0 0 0 6px rgba(107,172,49, .55);
+    };
+}
+.dailySupplies{
+    right: 100px;
+    top: 300px;
+    background-color: rgba(67,219,246, .85);
+    span{
+        margin-top: 33px;
+    }
+    &:hover{
+        background-color: rgba(67,219,246, 1);
+        box-shadow: 0 0 0 6px rgba(67,219,246, .55);
+    };
+}
+@keyframes banstar{
+    0%{
+        opacity: 0
+    }
+    50%{
+        opacity: 1
+    }
+    100%{
+        opacity: 0
+    }
+}
+@component-namespace mine {
+    @component SearchForm {
+        padding: 0;
+        margin: 0;
+
+        @modifier advanced {
+            padding: 1rem;
+        }
+        @descendent textField {
+            border: 1px solid #ccc;
+
+            @when invalid {
+                border: 1px solid red;
+            }
+        }
+    }
+}

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>demo</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="yes" name="apple-touch-fullscreen">
+    <meta content="telephone=no,email=no" name="format-detection">
+    <meta name="viewport" content="width=device-width,user-scalable=yes,minimum-scale=1.0,maximum-scale=1"/>
+	<link rel="stylesheet" href="css/app.min.css">
+</head>
+<body ontouchstart=''>
+	<article class="webview jiamo">
+		<div class="logo"></div>
+		<!-- 未中奖 -->
+		 <div class="nowin">
+			<div class="nowin-text">
+				感谢您的参与！<br>
+	该二维码已被扫<b> 2</b> 次，<br>
+	红包已经被领走啦！
+			</div>
+		</div>
+		<!-- 中奖logo -->
+		<div class="win-img"></div>
+		<!-- 积分 -->
+		<div class="win-integral">
+			<b>5</b><small>积分</small>
+		</div>
+		<!-- 实物 -->
+		<div class="win-goods"></div>
+		<!-- 红包 -->
+		<div class="packet">
+            <span>4.22<small>元</small></span>
+        </div>
+
+        <div class="md-win">
+            恭喜您获得<br>
+            全味公司提供的
+            <b>微信现金红包4.22元</b>
+            <a class="btn btn-gradual-yellow">立即领奖</a>
+        </div>
+		<div class="dialog">
+			<div class="md-address yes-win dialog-active">
+				<h3>请输入你的联系方式 <a href="javascript:;" class="colse hide-dialog">X</a></h3>
+                <ul class="list-from">
+                	<li>姓名:<input type="text"></li>
+					<li>电话:<input type="tel"></li>
+					<li>地址:<input type="text"></li>
+					<li>备注:<input type="text"></li>
+                </ul>
+				<p class="tips">我们将在3个工作日内跟你确认中奖信息,请保持电话畅通。咨询热线：028-85121928</p>
+				<a class="btn btn-gradual-yellow btn-sumbit">确认提交</a>
+	            </div>
+			</div>
+		</div>
+	</article>
+	<% include components/menu.ejs %>
+	<script src="http://libs.baidu.com/jquery/1.10.2/jquery.min.js"></script>
+	<script src="js/common.min.js"></script>
+</body>
+</html>

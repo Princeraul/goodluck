@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>demo</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="yes" name="apple-touch-fullscreen">
+    <meta content="telephone=no,email=no" name="format-detection">
+    <meta name="viewport" content="width=device-width,user-scalable=yes,minimum-scale=1.0,maximum-scale=1"/>
+	<link rel="stylesheet" href="css/common.min.css">
+	<link rel="stylesheet" href="css/app.min.css">
+	<style>
+		html {
+			background-image: none;
+			background-color: #e9e9e9;
+		}
+	</style>
+</head>
+<body ontouchstart=''>
+	<article class="webview consumer">
+		<a href="javascript:;" class="btn">点击弹出二维码</a>
+		<img src="images/6.jpg" width="100%" alt="">
+		<!-- 红包 -->
+		<div class="gift-packet">
+			<span class="gift-packet-number">
+				{$rlt.facevalue}<small>元</small>
+			</span>
+		</div>
+		<div class="gift-ipad"></div>
+		<div class="gift-yhj"></div>
+        <div class="gift-prompt">
+            恭喜您获得<br>
+            全味公司提供的
+            <b>微信现金红包4.22元</b>
+            <a class="btn-prize">立即领奖</a>
+        </div>
+
+
+		<div class="qrcodeanimation">
+			<img src="images/ewm.png">
+			<div class="qrcodeanimation-line"></div>
+		</div>
+
+		<div class="copyright">本次活动最终解释权归四川洞池郎酒业所有</div>
+	</article>
+	<menu class="quanwei-footer-navbar">
+    <a href="product.html" class="col-lg-6"><i class="iconfont icon-2chanpinzhanshieps"></i>产品展示</a>
+    <a href="qjjs.html" class="col-lg-6"><i class="iconfont icon-company_quality"></i>企业介绍</a>
+</menu>
+
+	<script src="http://libs.baidu.com/jquery/1.10.2/jquery.min.js"></script>
+	<script src="js/common.min.js"></script>
+</body>
+</html>

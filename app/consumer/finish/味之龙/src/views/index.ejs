@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>夹馍酱®</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="yes" name="apple-touch-fullscreen">
+    <meta content="telephone=no,email=no" name="format-detection">
+    <meta name="viewport" content="width=device-width,user-scalable=yes,minimum-scale=1.0,maximum-scale=1"/>
+	<link rel="stylesheet" href="css/app.min.css">
+
+</head>
+<body ontouchstart=''>
+	<section class="webview jiamo">
+		<img src="images/1.png" width="100%">
+        <div class="draw-from">
+			<input class="inp-default" type="tel" placeholder="输入手机号码可以抽奖噢" id="telphone">
+			<a class="btn btn-light-winered" href="prize.html">立即抽奖</a>
+        </div>
+		<div class="win-info">
+			奖品规则：<br>
+特等奖  华为畅享5S<br>
+一等奖  微信现金红包10元<br>
+二等奖  微信现金红包1.5元<br>
+三等奖  微信现金红包1元<br>
+活动内容：每瓶抽奖 瓶瓶中奖 送红包抢手机
+		</div>
+	</section>
+	<% include components/menu.ejs %>
+	<script src="http://libs.baidu.com/jquery/1.10.2/jquery.min.js"></script>
+	<script src="js/common.min.js"></script>
+</body>
+</html>

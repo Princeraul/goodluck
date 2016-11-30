@@ -1,0 +1,163 @@
+.ui_base {
+    position: relative;
+    top: -50px;
+    width: 400px;
+    height: 0px;
+    -webkit-perspective: 1000px;
+    -webkit-perspective-origin: 50% 0%;
+    perspective: 1000px;
+    perspective-origin: 50% 0%
+}
+
+.base {
+    transform: rotateX(70deg) rotateY(-10deg);
+    position: relative;
+    width: 350px;
+    height: 350px;
+    backface-visibility: hidden;
+    animation: cir 10s linear 0s infinite
+}
+
+.ball_base {
+    transform-origin: 225px 0px;
+    position: absolute;
+    top: 175px;
+    left: -50px;
+    width: 225px;
+    height: 127px
+}
+
+.ball_3 .ball {
+    transform: rotateY(0deg) rotateZ(10deg)
+}
+
+.ball_4 .ball {
+    transform: rotateY(-120deg) rotateZ(10deg)
+}
+
+.ball_5 .ball {
+    transform: rotateY(-240deg) rotateZ(10deg)
+}
+.ball {
+    transition: all 2s ease-out 0ms;
+    transform-origin: 50% 50%;
+    position: absolute;
+    width: 102px;
+    height: 102px;
+    line-height: 102px;
+    text-align: center;
+    left: 0px;
+    top: 0px;
+    color: #fff;
+    font-size: 12px;
+    opacity: 1;
+    overflow: hidden;
+    z-index: 10;
+}
+.ball-yellow{
+    background-image: url(../images/ball_1.png);
+}
+.ball-green{
+   background-image: url(../images/ball_2.png);
+}
+.ball-red{
+   background-image: url(../images/ball_3.png);
+}
+.pan {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 100%;
+    border: 1px solid #CDCECF;
+    background-size: 100% 100%
+}
+
+.ball_c {
+    -webkit-transform-origin: 50% 50%;
+    transform-origin: 50% 50%;
+    position: absolute;
+    width: 145px;
+    height: 145px;
+    line-height: 145px;
+    text-align: center;
+    background: url(../images/ball_big.png) no-repeat;
+    border-radius: 100%;
+    left: 85px;
+    top: 80px;
+    color: #fff;
+    font-size: 24px
+}
+.ball_3 {
+    transform: rotateX(-90deg) rotateY(0deg) translateY(-70px)
+}
+
+.ball_4 {
+    transform: rotateX(-90deg) rotateY(120deg) translateY(-70px)
+}
+
+.ball_5 {
+    transform: rotateX(-90deg) rotateY(240deg) translateY(-70px)
+}
+.ball {
+    color: #fff;
+    opacity: 1
+}
+
+.ball_3 .ball {
+    transition-delay: 500ms !important;
+    animation: cir3 10s linear 0s infinite
+}
+
+.ball_4 .ball {
+    transition-delay: 700ms !important;
+    animation: cir4 10s linear 0s infinite
+}
+
+.ball_5 .ball {
+    transition-delay: 1000ms !important;
+    animation: cir5 10s linear 0s infinite
+}
+
+.pan {
+    animation: cir_p 5s linear 0s infinite
+}
+
+
+@keyframes cir3 {
+    0% {
+        transform: rotateY(0deg) rotateZ(10deg)
+    }
+    100% {
+        transform: rotateY(-360deg) rotateZ(10deg)
+    }
+}
+
+@keyframes cir4 {
+    0% {
+        transform: rotateY(-120deg) rotateZ(10deg)
+    }
+    100% {
+        transform: rotateY(-480deg) rotateZ(10deg)
+    }
+}
+@keyframes cir5 {
+    0% {
+        transform: rotateY(-240deg) rotateZ(10deg)
+    }
+    100% {
+        transform: rotateY(-600deg) rotateZ(10deg)
+    }
+}
+
+@keyframes cir {
+    0% {
+        transform: rotateX(80deg) rotateY(-10deg) rotateZ(0deg)
+    }
+    100% {
+        transform: rotateX(80deg) rotateY(-10deg) rotateZ(-360deg)
+    }
+}
+.u_p3d {
+    -webkit-transform-style: preserve-3d !important;
+    transform-style: preserve-3d !important
+}

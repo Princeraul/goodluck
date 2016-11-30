@@ -1,0 +1,28 @@
+// author: Princeraul
+// email: suliangprinceraul@gmail.com
+// time: 2016-09-14
+
+@charset 'utf-8';
+
+.content {
+	padding: 0 3.5%;
+	color: #111111;
+	font-size: 16px;
+	line-height: 1.5;
+
+	h3 {
+		margin: 10px 0;
+		color: #F64015;
+	}
+
+	p {
+		margin: 5px 0;
+	}
+
+	.content-article {
+		min-height: 115px;
+		margin-bottom: 15px;
+		color: #555555;
+		text-indent: 2em;
+	}
+}

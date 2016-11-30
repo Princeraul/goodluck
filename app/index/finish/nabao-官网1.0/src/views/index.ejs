@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="format-detection" content="telephone=no">
+    <title>首页</title>
+    <link rel="stylesheet" href="css/app.min.css">
+</head>
+<style>
+    body{
+        background: url(images/bg-body.jpg) #00254a no-repeat top center;
+    }
+</style>
+<body style="overflow-x: hidden;">
+    <div class="indexBodyBg"></div>
+    <% include compontens/indexheader.ejs %>
+    <div class="indexMain">
+        <div class="indexAnimate">
+            <!-- 小星星 -->
+            <div class="indexAnimate-star"></div>
+            <div class="indexAnimate-circle">
+                <font>遮罩层</font>
+                <div class="ball-1">
+                    <div class="total-title">
+                        <span class="total-title-20">截至目前</span>
+                        <span class="total-title-fontImg">为商家额外增加销售额<small>（元）</small></span>
+                    </div>
+                </div>
+                <div class="ball-2"></div>
+                <div class="number"></div>
+                <div class="number-small-title">被扫商品数量已超过</div>
+                <div class="number-small"></div>
+            </div>
+            <div class="banner-operate">
+                <a href="###"><div class="somke"><span><img src="images/smoke.png" alt="烟酒类"></span><em>烟酒类</em> </div> </a>
+                <a href="###"><div class="food"><span><img src="images/food.png" alt="农产品"></span> <em>农产品</em></div></a>
+                <a href="###"><div class="meat"><span><img src="images/meat.png" alt="生鲜食品"></span><em>生鲜食品</em></div></a>
+                <a href="###"><div class="dailySupplies"><span><img src="images/dailySupplies.png" alt="日化用品"></span><em>日化用品</em></div></a>
+                <a href="###"><div class="drink"><span><img src="images/drink.png" alt="饮料"></span><em>饮料零食</em> </div></a>
+            </div>
+            <!-- circle 圆形轨道 -->
+            <div class="pathway">
+                <div class="content-pathway">
+                    <div><div></div></div>
+                    <div><div></div></div>
+                </div>
+            </div>
+        </div>
+        <!-- meteor shower -->
+        <div class="meteor-shower"></div>
+    </div>
+    <% include compontens/rocket.ejs %>
+    <!-- footer -->
+    <% include compontens/footer.ejs %>
+</body>
+</html>

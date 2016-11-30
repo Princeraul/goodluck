@@ -1,0 +1,68 @@
+// author: Princeraul
+// email: suliangprinceraul@gmail.com
+// time: 2016-09-14
+@charset 'UTF-8';
+
+// static color
+$red:   		#d83939;
+$white: 		#fff;
+$gray:  		#777;
+$lightgray: 	#eee;
+$grey: 			rgba(0, 0, 0, 0.8);
+$blue: 			#006faf;
+$winered: 		#bc211d;
+$lightred: 		#be151b;
+$yellow:		#eee576;
+$hightred:		#e03a3a;
+$secondred:		#fe5a34;
+$lightgray:     #d5d5d5;
+$hightgray:     #ccc;
+$graylittle:    #999;
+$deepyelleo:    #853424;
+
+$icon-color: (
+	'red': #d83939,
+);
+
+
+// build color
+// 根据design设计，修改全局color 变量
+$prompt-color: $red;
+$border-color: $lightgray;
+
+$dialog-color: $blue;
+$dialog-confirm-bgcolor: rgba(0, 0, 0, 0.1);
+
+$gift-packet-color: $winered;
+$gift-integral-color: $white;
+
+$bottomview-color: $grey;
+
+$loading-circle-border-color: #e74c3c #2980b9 #f1c40f #27ae60;
+$loading-circle-text-color: #ecf0f1;
+
+// from 抽奖按钮
+$btn-draw-text-color: $deepyelleo;
+$btn-draw-bg-color: $yellow;
+
+$btn-prize-text-color: $white;
+$btn-prize-bg-color: $red;
+
+$btn-affirm-text-color: $white;
+$btn-affirm-bg-color: $hightred;
+
+$btn-prompt-text-color: $white;
+$btn-prompt-bg-color: $secondred;
+
+$btn-gray-text-color: $white;
+$btn-gray-bg-color: $lightgray;
+
+$inp-draw-base-color: $yellow;
+
+$dialog-title-bg-color: $secondred;
+
+$base-text: $gray;
+
+.prompt-color {
+	color: $prompt-color;
+}

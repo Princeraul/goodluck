@@ -1,0 +1,30 @@
+.databankInfo{
+	width: 1200px;
+	margin: 0 auto;
+	min-height: 575px;
+	background-color: #fff;
+	padding: 58px 140px;
+	h3{
+		font-size: 36px;
+		margin: 0;
+		padding: 0;
+		line-height: 1;
+		color: #111111;
+		font-weight: 400;
+		text-align: center;
+	}
+	.sub-author{
+		text-align: center;
+		font-size: 18px;
+		color: #777777;
+/*		span{
+			margin-left: 50px;
+		}*/
+	}
+	.databankInfo-txt{
+		font-size: 16px;
+		color: #555555;
+		line-height: 1.8;
+		margin-top: 25px;
+	}
+}

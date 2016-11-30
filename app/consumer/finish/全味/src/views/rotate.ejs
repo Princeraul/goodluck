@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>全味</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="yes" name="apple-touch-fullscreen">
+    <meta content="telephone=no,email=no" name="format-detection">
+    <meta name="viewport" content="width=device-width,user-scalable=yes,minimum-scale=1.0,maximum-scale=1"/>
+	<link rel="stylesheet" href="css/app.min.css">
+</head>
+<body ontouchstart=''>
+	<div class="points-header">
+		princeraul,您共有314积分 <a href="integral.html">立即兑换</a> <span>X</span>
+	</div>
+	<section class="webview quanwei">
+        <section class="panel-rotate">
+            <div class="rotate-slogan"></div>
+            <div class="rotate-dish">
+                <div class="rotate-star"></div>
+                <div class="rotate-dish-prize"></div>
+                <a class="rotate-playbtn" href="javascript:;" title="开始抽奖"></a>
+				<!-- 中奖浮层-->
+				<section class="rotate-dialog">
+					<div class="rotate-dialog-title">温馨提示</div>
+					<div class="rotate-dialog-cot">
+						<p></p>
+						<a href="" class="btn">前去领取</a>
+					</div>
+				</section>
+            </div>
+        </section>
+	</section>
+	<% include components/menu.ejs %>
+
+	<script src="http://libs.baidu.com/jquery/1.10.2/jquery.min.js"></script>
+	<script type="text/javascript" src="js/jquery.rotate.min.js"></script>
+	<script src="js/common.min.js"></script>
+</body>
+</html>

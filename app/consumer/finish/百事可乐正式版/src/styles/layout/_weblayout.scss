@@ -1,0 +1,85 @@
+@charset 'UTF-8';
+
+.pr {
+	position: relative;
+}
+
+img {
+	display: inline-block;
+	vertical-align: top;
+}
+
+// 菜单栏
+.menu {
+	overflow: hidden;
+	padding: 0;
+	margin: 0;
+	text-align: center;
+
+	a {
+		box-sizing: border-box;
+		margin-bottom: 35px;
+		color: $md-color-base;
+		text-decoration: none;
+	}
+
+	img {
+		display: block;
+		width: 55px;
+		height: 55px;
+		margin: 0 auto 5px;
+	}
+}
+
+.md-win {
+	color: #fff;
+	text-align: center;
+
+	b {
+		display: block;
+		margin-top: 0;
+		font-size: 18px;
+		color: #f2cd08;
+		// 外描边
+		// -webkit-text-stroke: 0.7px #fff;
+	}
+
+	.btn {
+		margin-top: 15px;
+	}
+}
+
+// 模板1 红包
+.packet {
+	position: relative;
+	width: 125px;
+	height: 117px;
+	margin: 20px auto 15px;
+	background: url('../images/red-packet.png') no-repeat;
+	background-size: 100% 100%;
+	color: #bc211d;
+
+	span {
+		position: absolute;
+		top: 30px;
+		left: 50%;
+		width: 80%;
+		font-size: 20px;
+		font-weight: bold;
+		text-align: center;
+		transform: translate(-50%, 0);
+	}
+
+	small {
+		font-size: 16px;
+	}
+
+}
+
+// media queries
+@media screen and (min-width: 960px) {
+	.webview {
+		width: 740px;
+		margin: 0 auto;
+	}
+}

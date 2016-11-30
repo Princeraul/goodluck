@@ -1,0 +1,69 @@
+@charset 'utf-8';
+@import 'components/sprite';
+//
+// .icon-colse {
+// 	@include sprite($icon-colse);
+//
+// 	display: inline-block;
+// 	margin-bottom: 5px;
+// }
+//
+// .icon-right {
+// 	@include sprite($icon-right);
+//
+// 	display: inline-block;
+// 	margin-left: 20px;
+// 	margin-bottom: 5px;
+// }
+
+.icon-sprite {
+	background-image: url('../images/sprite.png');
+	background-repeat: no-repeat;
+	background-size: 223px 90px;
+}
+
+.icon-navabar-bg {
+	display: block;
+	width: 120px;
+	height: 30px;
+	background-position: 0 -35px;
+}
+
+.icon-fwsy,
+.icon-qyjs,
+.icon-produt {
+	display: block;
+	width: 72px;
+	height: 30px;
+	margin: 0 auto;
+}
+
+.icon-fwsy {
+	background-position: 0 -70px;
+}
+
+.icon-qyjs {
+	background-position: -75px -72px;
+}
+
+.icon-produt {
+	background-position: -125px -23px;
+}
+
+.icon-fw,
+.icon-sy {
+	display: inline-block;
+	width: 28px;
+	height: 25px;
+	vertical-align: -5px;
+}
+
+.icon-fw {
+	background: url(../images/iconfw.png) no-repeat;
+	background-size: 25px 25px
+}
+
+.icon-sy {
+	background: url(../images/iconsy.png) no-repeat;
+	background-size: 27px 25px
+}

@@ -1,0 +1,17 @@
+@charset 'utf-8';
+@import 'components/sprite';
+
+.icon-colse {
+	@include sprite($icon-colse);
+
+	display: inline-block;
+	margin-bottom: 5px;
+}
+
+.icon-right {
+	@include sprite($icon-right);
+
+	display: inline-block;
+	margin-left: 20px;
+	margin-bottom: 5px;
+}

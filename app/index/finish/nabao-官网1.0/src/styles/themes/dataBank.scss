@@ -1,0 +1,85 @@
+.databank{
+	width: 100%;
+	background-color: #e9e9e9;
+	padding: 100px 0 45px 0;
+}
+.databank-box{
+	width: 920px;
+	margin: 0 auto;
+	overflow: hidden;
+	a{
+		color: #555555;
+		text-decoration: none;
+		h3{
+			text-align: center;
+			color: #111111;
+			font-weight: 200;
+			margin-top: 10px;
+			overflow: hidden;
+			width: 380px;
+			height: 25px;
+			margin-bottom: 5px;
+		}
+		.sub-title{
+			text-align: center;
+			color: #555555
+		}
+	}
+	ul{
+		margin: 0;
+		padding: 0;
+		&:after{
+			display: table;
+			content: '';
+			clear: both;
+		};
+		li{
+			background-color: #fff;
+			list-style: none;
+			padding: 15px;
+			float: left;
+			margin: 20px 20px 0;
+			img{
+				width: 380px;
+				height: 190px;
+			}
+			&:hover{
+				box-shadow: 0 1px 3px rgba(0,0,0,.1);
+			};
+		}
+		.iconfont{
+			color: #909090
+		}
+	}
+	span{
+		margin-right: 15px;
+		display: inline-block;
+	}
+	.databank-box-cot{
+		width: 380px;
+		height: 65px;
+		overflow: hidden;
+		word-break: break-all;
+	}
+	.databank-box-more{
+		margin-right: 5px;
+		float: right;
+		color: #111111;
+	}
+	.fypage{
+		display: inline-block;
+		background-color: #4b8ddf;
+		border-radius: 18px;
+		color: #fff;
+		line-height: 1.2;
+		font-size: 16px;
+		float: right;
+		margin-top: 30px;
+		margin-right: 55px;
+		padding: 5px 15px;
+		padding-right: 10px;
+		&:hover{
+			background-color:#357fda;
+		};
+	}
+}

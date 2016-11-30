@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>夹馍酱®</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="yes" name="apple-touch-fullscreen">
+    <meta content="telephone=no,email=no" name="format-detection">
+    <meta name="viewport" content="width=device-width,user-scalable=yes,minimum-scale=1.0,maximum-scale=1"/>
+	<link rel="stylesheet" href="css/app.min.css">
+
+</head>
+<body ontouchstart=''>
+	<section class="webview jiamo">
+		<img src="images/1.png" width="100%">
+        <div class="draw-from">
+			<input class="inp-default" type="tel" placeholder="输入手机号码可以抽奖噢" id="telphone">
+			<a class="btn btn-light-winered" href="prize.html">立即抽奖</a>
+        </div>
+		<div class="win-info">
+
+			<div style="text-align:left">
+			<select name="city[shenid]" onchange="city(this,0)" style="webkit-appearance:none; background-color: rgba(0,0,0,0) ">
+			<option value="0" selected="selected">请选择55</option>
+			<option value="2">北京市</option><option value="3">上海市</option><option value="4">天津市</option><option value="5">重庆市</option><option value="6">河北省</option><option value="7">山西省</option><option value="8">内蒙古</option><option value="9">辽宁省</option><option value="10">吉林省</option><option value="11">黑龙江省</option><option value="12">江苏省</option><option value="13">浙江省</option><option value="14">安徽省</option><option value="15">福建省</option><option value="16">江西省</option><option value="17">山东省</option><option value="18">河南省</option><option value="19">湖北省</option><option value="20">湖南省</option><option value="21">广东省</option><option value="22">广西</option><option value="23">海南省</option><option value="24">四川省</option><option value="25">贵州省</option><option value="26">云南省</option><option value="27">西藏</option><option value="28">陕西省</option><option value="29">甘肃省</option><option value="30">青海省</option><option value="31">宁夏</option><option value="32">新疆</option><option value="33">台湾省</option><option value="34">香港</option><option value="35">澳门</option><option value="3358">钓鱼岛</option>        </select>
+
+			<select name="city[shiid]"  onchange="city(this,1)"><option selected="selected" value="0">请选择</option></select>
+
+			<span id="shiid" style="display:none">区<select id="sshiid" name="city[quid]"><option selected="selected" value="0">请选择</option></select></span>
+			</div>
+			奖品规则：<br>
+特等奖  华为畅享5S<br>
+一等奖  微信现金红包10元<br>
+二等奖  微信现金红包1.5元<br>
+三等奖  微信现金红包1元<br>
+活动内容：每瓶抽奖 瓶瓶中奖 送红包抢手机
+		</div>
+	</section>
+	<menu class="jiamo-footer-navbar">
+	    <a href="fwsy.html" class="col-lg-3"><i class="iconfont icon-fangweisuyuan"></i>防伪溯源</a>
+	    <a href="product.html" class="col-lg-3"><i class="iconfont icon-company_quality"></i>产品展示</a>
+	    <a href="qjjs" class="col-lg-3"><i class="iconfont icon-2chanpinzhanshieps"></i>企业介绍</a>
+	    <a href="" class="col-lg-3"><i class="iconfont icon-shouye"></i>官方网站</a>
+	</menu>
+
+	<script src="http://libs.baidu.com/jquery/1.10.2/jquery.min.js"></script>
+	<script src="js/common.min.js"></script>
+</body>
+</html>

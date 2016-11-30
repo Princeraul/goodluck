@@ -1,0 +1,72 @@
+
+.inp-telphone {
+	@extend %inp-default;
+
+	margin: 0 auto;
+	color: $inp-draw-base-color;
+	border: 1px solid $inp-draw-base-color;
+
+	&::-webkit-input-placeholder {
+		color: $inp-draw-base-color;
+		line-height: 40px;
+	}
+}
+
+// 抽奖按钮
+.btn-draw {
+	@extend %btn;
+
+	background-color: $btn-draw-bg-color;
+	color: $btn-draw-text-color;
+
+	&:active {
+		background-color: lighten($btn-draw-bg-color, 5%);
+	}
+}
+
+// 领奖按钮
+.btn-prize {
+	@extend %btn;
+
+	background-color: $btn-prize-bg-color;
+	color: $btn-prize-text-color;
+
+	&:active {
+		background-color: lighten($btn-prize-bg-color, 5%);
+	}
+}
+
+// dialog 弹窗按钮
+.btn-prompt {
+	@extend %btn;
+
+	width: 92%;
+	background-color: $btn-prompt-bg-color;
+	color: $btn-prompt-text-color;
+
+	&:active {
+		background-color: lighten($btn-prompt-bg-color, 5%);
+	}
+}
+
+// address 确认按钮
+.btn-affirm {
+	@extend %btn;
+
+	width: 94%;
+	background-color: $btn-affirm-bg-color;
+	color: $btn-affirm-text-color;
+
+	&:active {
+		background-color: lighten($btn-affirm-bg-color, 5%);
+	}
+}
+
+// points gray btn
+.btn-gray {
+	@extend %btn;
+
+	width: 92%;
+	background-color: $btn-gray-bg-color;
+	color: $btn-gray-text-color;
+}

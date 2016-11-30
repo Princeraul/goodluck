@@ -1,0 +1,45 @@
+@charset 'UTF-8';
+
+.two-code {
+	position: relative;
+	width: 216px;
+	height: 110px;
+	margin: 30px auto 0;
+	text-align: center;
+
+	img {
+		width: 216px;
+		height: 110px;
+	}
+
+	.two-code-line {
+		position: absolute;
+		top: 20px;
+		z-index: 999;
+		right: 5px;
+		width: 68px;
+		height: 2px;
+		background: url(../images/line.png) no-repeat;
+		background-size: 68px 2px;
+		animation: qrcode-line 2s infinite ease;
+	}
+}
+
+.touch-tip {
+	margin: 10px 0 0; 
+	text-align: center;
+}
+
+@keyframes qrcode-line{
+	0%{
+		top: 20px;
+		opacity: 0;
+	}
+	50%{
+		opacity: 1;
+	}
+	100%{
+		top: 85px;;
+		opacity: 0;
+	}
+}

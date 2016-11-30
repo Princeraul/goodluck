@@ -1,0 +1,99 @@
+@charset 'utf-8';
+
+@import 'base/normalize';
+
+@import 'components/font';
+@import 'components/color';
+@import 'components/dialog';
+@import 'components/loading';
+@import 'components/button';
+@import 'components/twocode';
+
+@import 'layout/weblayout';
+@import 'layout/grid';
+
+// 初始化dialog
+@include dialog;
+
+.view-footer a {
+	display: block;
+	box-sizing: border-box;
+	width: 50%;
+	background: linear-gradient(#281709, #8b3706);
+	color: #fcd57b;
+	font-size: 14px;
+	line-height: 50px;
+	text-align: center;
+	float: left;
+	text-decoration: none;
+
+	&:nth-child(1) {
+		border-right: 1px solid #784512;
+	}
+
+	&:active {
+		background: linear-gradient(#b42404, #4a1306);
+	}
+}
+
+.view-page {
+	// background-color: #fffef7;
+	color: $md-color-base;
+}
+
+.banner {
+	width: 90%;
+	height: 450px;
+	margin: 0 auto;
+}
+
+.footer-navbar {
+	position: fixed;
+	z-index: 1;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 50px;
+	background-color: #04448a;
+
+	a {
+		float: left;
+		width: 50%;
+		height: inherit;
+		background-color: #04448a;
+		color: #fff;
+		text-align: center;
+		text-decoration: none;
+		line-height: 50px;
+
+		&:active {
+			background-color: #003875;
+		}
+
+		&:nth-child(2) {
+			background-color: #003875;
+		}
+	}
+}
+
+.logo {
+	width: 130px;
+	height: 50px;
+	margin: 10px 0 0 15px;
+}
+
+.win-text {
+	margin: 15px 0;
+	color: #ED1923;
+	-webkit-text-stroke: 1.5px #fff;
+	font-size: 40px;
+	font-weight: 700;
+	text-align: center;
+}
+
+.winla {
+	display:block;
+	width: 95px;
+	height: 36px;
+	margin: 25px auto 20px;
+}

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+
+<link rel="stylesheet" href="http://www.nabao.me/Public/Business/css/style.min.css">
+
+</head>
+<body>
+    <li class="entrance">
+        <label class="patitle">test:</label>
+        <dd>
+            <label for="weixinway" class="mr5 check-blue">
+                <input type="radio" id="weixinway" onchange="raffleWay.isWeinxin(this)" checked="checked" value="1" name="door_type" alt="微信扫码">
+                <span class="input-control_indicator"></span>A
+            </label>
+        </dd>
+        <dd>
+            <label for="webWay" class="check-blue">
+                <input type="radio" id="webWay" onchange="raffleWay.isWebWay(this)" value="0" name="door_type">
+                <span class="input-control-indicator"></span>B
+            </label>
+        </dd>
+    </li>
+    <li class="entrance">
+        <label class="patitle">A</label>
+        <dd>
+            <label for="login-A" class="mr5 check-blue">
+                <input type="radio" id="login-A" checked="checked" value="1" name="authorize">
+                <span class="input-control_indicator"></span>A1
+            </label>
+        </dd>
+        <dd>
+            <label for="login-B" class="check-blue">
+                <input type="radio" id="login-B" value="0" name="authorize">
+                <span class="input-control-indicator"></span>B1
+            </label>
+        </dd>
+    </li>
+    <li class="entrance">
+        <label class="patitle">B</label>
+        <dd>
+            <label for="tel-A" class="mr5 check-blue">
+                <input type="radio" id="tel-A"  value="1" name="before">
+                <span class="input-control_indicator"></span>A1
+            </label>
+        </dd>
+        <dd>
+            <label for="gzh-A" class="check-blue">
+                <input type="radio" id="gzh-A" checked="checked"  value="2" name="before">
+                <span class="input-control-indicator"></span>B1
+            </label>
+        </dd>
+        <dd>
+            <label for="cj-A" class="check-blue">
+                <input type="radio" id="cj-A" value="0" name="before">
+                <span class="input-control-indicator"></span>C1
+            </label>
+        </dd>
+    </li>
+    <li class="entrance">
+        <label class="patitle">C</label>
+        <dd>
+            <label for="tel-B" class="mr5 check-blue">
+                <input type="radio" id="tel-B"  checked="checked" value="1" name="after">
+                <span class="input-control_indicator"></span>A1
+            </label>
+        </dd>
+        <dd>
+            <label for="gzh-B" class="check-blue">
+                <input type="radio" id="gzh-B"  value="2" name="after">
+                <span class="input-control-indicator"></span>B1
+            </label>
+        </dd>
+        <dd>
+            <label for="cj-B" class="check-blue">
+                <input type="radio" id="cj-B" value="0" name="after">
+                <span class="input-control-indicator"></span>C1
+            </label>
+        </dd>
+    </li>
+    <script src="http://libs.baidu.com/jquery/1.10.2/jquery.min.js"></script>
+    <script src="raffeway.js"></script>
+</body>
+</html>

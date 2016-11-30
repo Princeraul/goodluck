@@ -1,0 +1,40 @@
+@charset 'utf-8';
+
+@import 'base/normalize';
+
+@import 'components/color';
+@import 'components/dialog';
+@import 'components/loading';
+@import 'components/button';
+@import 'components/twocode';
+
+@import 'layout/weblayout';
+
+// 初始化dialog
+@include dialog;
+
+.fenjiu-footer a {
+	display: block;
+	box-sizing: border-box;
+	width: 50%;
+	background: linear-gradient(#281709, #8b3706);
+	color: #fcd57b;
+	font-size: 14px;
+	line-height: 50px;
+	text-align: center;
+	float: left;
+	text-decoration: none;
+
+	&:nth-child(1) {
+		border-right: 1px solid #784512;
+	}
+
+	&:active {
+		background: linear-gradient(#b42404, #4a1306);
+	}
+}
+
+.fenjiu-page {
+	background-color: #fffef7;
+	color: $md-color-base;
+}

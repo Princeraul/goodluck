@@ -1,0 +1,33 @@
+@charset 'utf-8';
+
+@import 'base/normalize';
+
+@import 'components/font';
+@import 'components/color';
+@import 'components/dialog';
+@import 'components/loading';
+@import 'components/button';
+
+@import 'layout/weblayout';
+// @import 'layout/grid';
+
+// 初始化dialog
+@include dialog;
+
+.small-packet {
+	width: 100%;
+	padding-top: 52px;
+	background: url('../images/small-red-packet.png') center top no-repeat;
+	background-size: 101px 67px;
+	margin: 40px 0 20px;
+	color: #ffb448;
+	font-size: 16px;
+	font-weight: 600;
+	text-align: center;
+}
+
+.copyright {
+	color: #256997;
+	font-size: 14px;
+	text-align: center;
+}

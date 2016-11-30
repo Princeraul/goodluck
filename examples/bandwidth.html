@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>纳宝科技带宽计算器</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="yes" name="apple-touch-fullscreen">
+    <meta content="telephone=no,email=no" name="format-detection">
+    <meta name="viewport" content="width=device-width,user-scalable=yes,minimum-scale=1.0,user-scalable=no,maximum-scale=1"/>
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+    <style>
+        body {
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+        }
+        h4 {
+            padding: 10px 0;
+        }
+        .bs-example>.btn {
+            margin-top: 5px;
+            margin-bottom: 5px;
+        }
+        .error {
+            display: none;
+            margin: 5px 0;
+            color: red;
+        }
+        .result-one,
+        .result-two {
+            padding-top: 10px;
+            font-size: 15px;
+        }
+        .result-one div,
+        .result-two div {
+            margin-bottom: 5px;
+        }
+
+        font {
+            color: red;
+            font-weight: 700;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h4 class="text-center">纳宝科技带宽计算器</h4>
+        <div class="tabnavbar btn-group btn-group-justified form-group">
+            <a href="javascript:;" data-name="group-tab" class="btn btn-info">单日最大访问量</a>
+            <a href="javascript:;" data-name="group-tab" class="btn btn-default">计算带宽</a>
+        </div>
+        <div class="tab-box form-horizontal">
+            <div class="form-group">
+            	<label class="col-sm-2 control-label">服务带宽(MB/s)：</label>
+            	<div class="col-sm-10">
+                    <input type="tel" data-name="write-band" class="form-control" placeholder="请填入正整数">
+            	</div>
+            </div>
+            <div class="form-group">
+            	<label class="col-sm-2 control-label">页面大小(kb)：</label>
+            	<div class="col-sm-10">
+            		<input class="form-control" data-name="write-page" type="tel" placeholder="请填入正整数">
+            	</div>
+            </div>
+            <div class="error">输入错误，请填写正整数</div>
+            <div class="bs-example">
+                <a href="javascript:;" id="result-people" class="btn btn-danger btn-block">立刻计算</a>
+            </div>
+            <div class="result-1" style="display: none">
+                <div class="online-people">同时并发数：<font data-name="online-people-1"></font></div>
+                <div class="onedat-result">单日最大访问人数：<font data-name="online-result-1"></font></div>
+
+                <div class="tips"><font>*</font>此计算数据为理想值，仅作为参考，以真实数据为准。</div>
+            </div>
+        </div>
+        <div class="tab-box form-horizontal" style="display: none">
+            <div class="form-group">
+            	<label class="col-sm-2 control-label">当日最大在线(人)：</label>
+            	<div class="col-sm-10">
+                    <input type="tel" data-name="write-maxpeople" class="form-control" placeholder="请填入正整数">
+            	</div>
+            </div>
+            <div class="form-group">
+            	<label class="col-sm-2 control-label">页面大小(kb)：</label>
+            	<div class="col-sm-10">
+            		<input class="form-control" data-name="write-page-2" type="tel" placeholder="请填入正整数">
+            	</div>
+            </div>
+            <div class="error error-2">输入错误，请填写正整数</div>
+            <div class="bs-example">
+                <a href="javascript:;" id="result-band" class="btn btn-danger btn-block">立刻计算</a>
+            </div>
+            <div class="result-2" style="display: none">
+                <div class="online-people">同时并发数：<font data-name="online-people-2"></font></div>
+                <div class="onedat-result">需要的带宽为：<font data-name="online-result-2"></font>MB/s</div>
+                <div class="tips"><font>*</font>此计算数据为理想值，仅作为参考，以真实数据为准。</div>
+            </div>
+        </div>
+    </div>
+
+    <script src="http://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+    <script>
+        function Count(obj) {
+            var result;
+            this.error = function() {
+                if(obj.writeBand == '' && obj.writePage == '') {
+                    $('.error').show();
+                    return false;
+                }
+            }
+
+            this.resultPeople = function() {
+                this.error();
+                result = obj.writeBand * 1024 / 8 / obj.writePage;
+                $(obj.onLinePeople).html(result);
+                $(obj.onedatResult).html(parseInt(result*3600));
+                $('.error').hide();
+                $(obj.result).show();
+            }
+
+            this.resultBand = function() {
+                this.error();
+                result = obj.writeBand / 3600;
+                $(obj.onLinePeople).html(Math.round(result));
+                $(obj.onedatResult).html(Math.round(result * obj.writePage * 8 / 1024));
+                $('.error').hide();
+                $(obj.result).show();
+            }
+        }
+
+        $(function() {
+            var actived = 'createTouch' in document ? 'touchend' : 'click';
+            var $tabEvent = $('a[data-name="group-tab"]');
+            var $resultPeople = $('#result-people');
+            var $resultBand = $('#result-band');
+
+            $tabEvent.on(actived, function() {
+                var index = $(this).index();
+                $(this).removeClass('btn-default').addClass('btn-info')
+                .siblings().removeClass('btn-info').addClass('btn-default');
+                $('.error').hide();
+                $('.tab-box').hide().eq(index).show();
+            })
+
+            $resultPeople.on(actived, function() {
+                new Count({
+                    writeBand: $('input[data-name="write-band"]').val(),
+                    writePage: $('input[data-name="write-page"]').val(),
+                    onLinePeople: 'font[data-name="online-people-1"]',
+                    onedatResult: 'font[data-name="online-result-1"]',
+                    result: '.result-1'
+                }).resultPeople()
+            })
+
+            $resultBand.on(actived, function() {
+                new Count({
+                    writeBand: $('input[data-name="write-maxpeople"]').val(),
+                    writePage: $('input[data-name="write-page-2"]').val(),
+                    onLinePeople: 'font[data-name="online-people-2"]',
+                    onedatResult: 'font[data-name="online-result-2"]',
+                    result: '.result-2'
+                }).resultBand()
+            })
+        })
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		body {
+			margin: 0;
+			padding: 0;
+			font-size: 10px;
+		}
+
+		.module {
+			font-size: 1.5em;
+			padding: 1em;
+			margin: 1.5em;
+			border: 0.25em solid #000;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="module">text</div>
+	<div class="module">
+		text
+		<div class="module">
+			text
+			<div class="module">
+				text
+			</div>
+		</div>
+	</div>
+	<script>
+		function fun(n, o) {
+			console.log(o);
+			return {
+				fun: function (m) {
+					// console.log(n + '<br>')
+					return fun(m, n);
+
+					// a.fun(1) fun(1, 0) console.log(1)
+					// a.fun(2) fun(2, 0) console.log(2)
+					// a.fun(3) fun(3, 0) colnsole.log(3)
+				}
+			}
+		}
+
+		var a = fun(0);
+		a.fun(1);
+		a.fun(2);
+		a.fun(3);
+
+		console.log('第一列输出结束')
+
+		//
+		var b = fun(0).fun(1).fun(2).fun(3);
+
+		//console.log('undefined');
+		//fun(1, 0);
+
+		//console.log('m=1' + 'n=0');
+		//fun(2, 1);
+
+		//console.log('m=2' + 'n=1');
+		//fun(3, 1);
+		//console.log('m=3' + 'n=2');
+
+		//putout undefined 0 1 2
+
+		console.log('第二列输出结束')
+
+		var c = fun(0).fun(1);
+
+		// putout undefined 0
+
+		//console.log('undefined');
+		//fun(1, 0);
+		// console.log('m=1' + 'n=1');
+		// fun(2, 1);
+
+		c.fun(2);
+		c.fun(3)
+
+		// putout undefined 0 1 1
+
+		var name = "The Window";　　
+		var object = {　　　　
+			name: "My Object",
+			　　　　getNameFunc: function () {
+
+				　　　　　　
+				return function () {　　　　　　　　
+					return this.name;　　　　　
+				};　　　　
+			}
+		};
+		// alert(object.getNameFunc()())
+		var n = 1000;
+		function foo() {
+			// var n  = 100;
+			return function foo1() {
+				var n = 10;
+				console.log(n);
+			}
+		}
+
+		var result = foo();
+		result();
+	</script>
+</body>
+
+</html>

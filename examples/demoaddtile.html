@@ -10,11 +10,13 @@
 		p{margin:5px; font-size:14px;}
 	</style>
 	<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=7h5HwuDaV1oB7vnmWb59bxa6dXmb2aY4"></script>
+	<script src="http://webapi.amap.com/maps?v=1.3&key=00fd9258b9dcb548c180e64185344154"></script>
 	<title>add tile</title>
 </head>
 <body>
 	<div id="demoMap"></div>
     <div id="currentTime"></div>
+	<div id="container"></div>
 </body>
 </html>
 <script type="text/javascript">
@@ -31,50 +33,78 @@
 	//开启鼠标滚轮缩放
 	map.enableScrollWheelZoom(true);
 
-	// 图标坐标转换墨卡托投影
-	function PixelCahnge(x, y) {
-		var result = {};
-		var MercatorX = x * 256;
-		var MercatorY = y * 256;
+	// 图标坐标转换百度经纬度
+	function PixelCahnge(x, y, z) {
+		// 转化墨卡托坐标
+		var MercatorX = x * 256 / Math.pow(2, z-18);
+		var MercatorY = y * 256 / Math.pow(2, z-18);
+
 		// 转化成经纬度
 		var mctXY = new BMap.Pixel(MercatorX, MercatorY);
 		var projection2 = map.getMapType().getProjection();
     	var LngLat = projection2.pointToLngLat(mctXY);
 
-		//
-		var bgTogc = BD09TOGCJ02(LngLat.lng, LngLat.lat);
-		var projection = new BMap.MercatorProjection();
+		console.log('百度经度' + LngLat.lng + ',百度纬度：' + LngLat.lat)
 
-		var point = projection.lngLatToPoint(new BMap.Point(bgTogc[0], bgTogc[1]));
+		return LngLat;
+	}
 
-		return point;
-		// console.log(point);
+	// 经纬度转换墨卡托坐标系
+	function lonlat2mercator(lonlat){
+		var  mercator={x:0,y:0};
+		var x = lonlat.x *20037508.34/180;
+		var y = Math.log(Math.tan((90+lonlat.y)*Math.PI/360))/(Math.PI/180);
+		y = y *20037508.34/180;
+		mercator.x = x;
+		mercator.y = y;
+		return mercator ;
 	}
 
 	// 百度坐标系转化高德坐标系
 	function BD09TOGCJ02(bd_lon, bd_lat) {
+		var LngLat = {};
 	    var x_pi = 3.14159265358979324 * 3000.0 / 180.0;
 	    var x = bd_lon - 0.0065;
 	    var y = bd_lat - 0.006;
 	    var z = Math.sqrt(x * x + y * y) - 0.00002 * Math.sin(y * x_pi);
 	    var theta = Math.atan2(y, x) - 0.000003 * Math.cos(x * x_pi);
-	    var gg_lng = z * Math.cos(theta);
-	    var gg_lat = z * Math.sin(theta);
-	    return [gg_lng, gg_lat]
+	    LngLat.x = z * Math.cos(theta);
+	    LngLat.y = z * Math.sin(theta);
+	    return LngLat;
 	}
+
+
+	var Amap = new AMap.Map('container');
 
 	// 这里的x表示图标坐标 转化墨卡托*256
 	 tileLayer.getTilesUrl = function(tileCoord, z) {
-		var resultPoint = PixelCahnge(tileCoord.x, tileCoord.y);
-		console.log(resultPoint.y * Math.pow(2, z - 18))
-		var x = Math.floor(resultPoint.x * Math.pow(2, z - 18) + 226);
-		var y = Math.floor(resultPoint.y * Math.pow(2, z - 18) + 387);
-		// console.log(x)
+		// 转化成百度经纬度
+		var LngLat = PixelCahnge(tileCoord.x, tileCoord.y, z);
+		// console.log('this is baidu:' + LngLat.lng + 'this is baidu lat:' + LngLat.lat)
+		// 转换成火星坐标系
+		var GCJ02 = BD09TOGCJ02(LngLat.lng, LngLat.lat);
+		console.log('高德经度：' + GCJ02.x)
+
+		console.log(PixelCahnge(3370, 1150, 12))
+
+
+		var pixel = Amap.lnglatTocontainer([GCJ02.x, GCJ02.y]);
+		var x = pixel.getX();
+		var y = pixel.getY();
+
+		// 转换成墨卡托坐标系
+		// var mercator = lonlat2mercator(GCJ02);
+		// console.log(mercator.x)
+		// // 转换像素坐标系-图款坐标系
+		// var x = Math.floor(mercator.x * Math.pow(2, z - 18)/256);
+		// var y = Math.floor(mercator.y * Math.pow(2, z - 18)/256);
 		// var x = tileCoord.x;
 		// var y = tileCoord.y;
+		console.log(x)
+		console.log(y)
 		// var url =  'http://heatmap.amap.com/api/showmap/pvheatmap?x=3374&y=1552&z=12&showmap=equal&htime=2016120210';
 		var url =  'http://heatmap.amap.com/api/showmap/pvheatmap?x=' + x + '&y=' + y + '&z=' + z + '&showmap=equal' + '&htime=' + formate(now,'yyyyMMddHH');
-		console.log(url);
+		// console.log(url);
 		return url;
 	}
 	map.addTileLayer(tileLayer);
